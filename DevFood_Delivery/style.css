@@ -1,0 +1,106 @@
+
+.header-container {
+  background-color: #fbc13a;
+  color: #0b0b0b;
+  padding: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.menu {
+  list-style-type: none;
+  display: flex;
+  gap: 20px;
+}
+
+.menu-items {
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 16px;
+  transition: color 0.3s ease;
+}
+
+.menu-items:hover {
+  color: #ffffff; 
+}
+
+.search-container {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  margin-left: 10px;
+  margin-bottom: 20px;
+}
+
+.search-input {
+  padding: 10px;
+  width: 300px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 14px;
+}
+
+.search-button {
+  padding: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.search-button:hover {
+  background-color: #45a049; 
+}
+.cart-container{
+  margin-left: 10px;
+  display: flex;
+  flex-wrap: wrap;
+
+}
+.restaurant-card {
+  border: 1px solid #ddd;
+  padding: 15px;
+  width: 100%;
+  max-width: 400px; 
+  margin: 15px;
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-between;
+  align-items: center;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  transition: transform 0.3s ease;
+}
+
+.restaurant-card:hover {
+  transform: scale(1.03); 
+}
+
+.food-info {
+  flex: 1;
+  padding-left: 15px;
+}
+
+.order-button {
+  padding: 10px;
+  background-color: #4caf50;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 14px;
+  transition: background-color 0.3s ease;
+}
+
+.order-button:hover {
+  background-color: #45a049; 
+}
+.logo{
+  width: 100px;
+  height: 40px;
+}
