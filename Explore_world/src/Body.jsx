@@ -1,12 +1,15 @@
 import RestaurantCard from "./RestaurantCard";
+import Shimmer from "./shimmer";
 import resList from "../utils/mockdata";
 import { useState ,useEffect } from "react";
 const Body = () => {
   const [ListofRes, setListofRes] = useState([]);
-
+  
    useEffect(()=>{
       fetchdata();
    },[]);
+
+
 // console.log(ListofRes);
     const fetchdata =async ()=>{
        const data =await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.624480699999999&page_type=DESKTOP_WEB_LISTING");
@@ -31,8 +34,14 @@ const Body = () => {
        console.log(listdata);
       setListofRes(listdata);
     }
+  //   if(ListofRes.length==0)
+  // {
+  //  return <Shimmer/>;
+  // }
 
-   return ( <div className="body-container">
+   return (ListofRes.length)==0? (
+   <Shimmer/>
+   ): ( <div className="body-container">
       <div className="search-container">
         <input
           className="search-input"

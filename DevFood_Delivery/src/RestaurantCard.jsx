@@ -29,7 +29,7 @@ const RestaurantCard = (props) => {
           <button className="order-button">Order Now</button>
         </div>
       </div>
-    );
+     );
   };
 
   

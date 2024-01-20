@@ -1,4 +1,5 @@
 import RestaurantCard from "./RestaurantCard";
+
 import resList from "../utils/mockdata";
 import { useState } from "react";
 const Body = () => {
