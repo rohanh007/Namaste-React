@@ -4,6 +4,8 @@ import resList from "../utils/mockdata";
 import { useState ,useEffect } from "react";
 const Body = () => {
   const [ListofRes, setListofRes] = useState([]);
+  const [filterListofRes, setfilterListofRes] = useState([]);
+  const [searchtext ,setsearchtext]= useState('');
   
    useEffect(()=>{
       fetchdata();
@@ -33,34 +35,48 @@ const Body = () => {
       const listdata=await checkJsonData(json);
        console.log(listdata);
       setListofRes(listdata);
+      setfilterListofRes(listdata);
     }
   //   if(ListofRes.length==0)
   // {
   //  return <Shimmer/>;
   // }
 
-   return (ListofRes.length)==0? (
+   return (ListofRes.length)===0? (
    <Shimmer/>
    ): ( <div className="body-container">
+    {/* <div className="filter"> */}
       <div className="search-container">
         <input
           className="search-input"
           type="text"
+          value={searchtext}
           placeholder="Search for your favorite food..."
+          onChange={(e)=>{
+              setsearchtext(e.target.value);
+          }}
         ></input>
-        <button className="search-button">Search</button>
+        <button className="search-button"  onClick={()=>{
+          
+            const filterListofRes = ListofRes.filter((res)=>
+              res.info.name.toLowerCase().includes(searchtext.toLowerCase())
+              
+            );
+             setfilterListofRes(filterListofRes);
+             console.log(filterListofRes);
+        }}>Search</button>
       </div>
       <div className="search-container">
 
        <button className="search-button" onClick={()=>{
 
-              const filterdata=ListofRes.filter((res)=>res.data.avgRating > 4);
+              const filterdata=ListofRes.filter((res)=>res.info.avgRating > 4);
               setListofRes(filterdata);
               
        }}>Top rated restaurants</button>
 
       </div>
-  
+      {/* </div> */}
       <div className="cart-container">
         {/* <RestaurantCard resData={resList[0]}/>
         <RestaurantCard resData={resList[1]}/>
@@ -76,7 +92,7 @@ const Body = () => {
         <RestaurantCard resData={resList[11]}/>
         <RestaurantCard resData={resList[12]}/> */}
  
-        {ListofRes.map(restaurant=> 
+        {filterListofRes.map(restaurant=> 
         (<RestaurantCard key={restaurant?.info?.id} {...restaurant?.info} />
 ))}
       </div>
