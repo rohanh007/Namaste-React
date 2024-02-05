@@ -5,13 +5,15 @@ import Body from "./src/Body";
 import About from "./src/About";
 import Contact from "./src/Contact";
 import Error from "./src/Error";
-import { createBrowserRouter ,RouterProvider } from "react-router-dom";
+import Restaurantmenu from "./src/Restaurantmenu";
+import { createBrowserRouter ,RouterProvider, Outlet  } from "react-router-dom";
 
 
 const PageLayout =() =>(
    <div className="App-container">
      <Header></Header>
-     <Body/>
+     <Outlet/>
+     {/* <Body/> */}
     </div>
 )
 
@@ -19,18 +21,29 @@ const AppLayout =createBrowserRouter([
   {
     path:"/",
     element:<PageLayout/>,
+    children:[
+      {
+        path:"/",
+        element:<Body/>,
+       
+      },
+      {
+        path:"/About",
+        element:<About/>,
+        
+      },
+      {
+        path:"/Contact",
+        element:<Contact/>, 
+      
+      },
+      {
+        path:"/Menu",
+        element:<Restaurantmenu/>, 
+      }
+    ],
     errorElement:<Error/>
-  },
-  {
-    path:"/About",
-    element:<About/>,
-    errorElement:<Error/>
-  },
-  {
-    path:"/Contact",
-    element:<Contact/>,
-    errorElement:<Error></Error>  
-  }
+  }  
 
 ])
 

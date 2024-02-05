@@ -1,5 +1,6 @@
 import { LOGO_URL } from "../utils/constant";
 import { useState } from "react";
+import { Link } from "react-router-dom";
 const Header = () => {
   const [btnnamereact , setbtnnamereact] =useState("LogIn");
    
@@ -10,11 +11,11 @@ const Header = () => {
       </div>
       <div className="menu-container">
         <ul className="menu">
-          <li className="menu-items">Home</li>
-          <li className="menu-items">Menu</li>
-          <li className="menu-items">About us</li>
-          <li className="menu-items">Contact us</li>
-          <li className="menu-items">Specials</li>
+          <li className="menu-items"><Link to={"/"}>Home</Link></li>
+          <li className="menu-items"><Link to={"/Menu"}>Menu</Link></li>
+          <li className="menu-items"><Link to={"/About"}>About us</Link></li>
+          <li className="menu-items"><Link to={"/contact"}>Contact us</Link></li>
+          <li className="menu-items"><Link to={"/Specials"}>Specials</Link></li>
           <li className="menu-items">Cart</li>
           <button className="menu-items logibbtn" onClick={()=>{
             btnnamereact=="LogIn" ? setbtnnamereact("LogOut"):setbtnnamereact("LogIn")

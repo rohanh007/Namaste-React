@@ -10,6 +10,7 @@ const RestaurantCard = ({
   avgRatingString,
 }) => {
   return (
+    
     <div className="restaurant-card">
       <div className="food-image">
       <img src={CDN_URL + cloudinaryImageId} />

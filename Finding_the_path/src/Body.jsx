@@ -14,15 +14,15 @@ const Body = () => {
 
 // console.log(ListofRes);
     const fetchdata =async ()=>{
-       const data =await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.624480699999999&page_type=DESKTOP_WEB_LISTING");
-      //  console.log(data);
+       const data =await fetch("https://www.swiggy.com/mapi/homepage/getCards?lat=18.5917357&lng=73.74562809999999");
+      //console.log(data);
        const json =await data.json();
-
+       //console.log(json);
        async function checkJsonData(jsonData) {
-        for (let i = 0; i < jsonData?.data?.cards.length; i++) {
+        for (let i = 0; i < jsonData?.data?.success?.cards.length; i++) {
 
           // initialize checkData for Swiggy Restaurant data
-          let checkData = json?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+          let checkData = json?.data?.success?.cards[i]?.gridWidget?.gridElements?.infoWithStyle?.restaurants;
 
           // if checkData is not undefined then return it
           if (checkData !== undefined) {
@@ -33,7 +33,7 @@ const Body = () => {
 
        //console.log(json);
       const listdata=await checkJsonData(json);
-       console.log(listdata);
+      // console.log(listdata);
       setListofRes(listdata);
       setfilterListofRes(listdata);
     }
