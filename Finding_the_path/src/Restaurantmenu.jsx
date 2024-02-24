@@ -18,7 +18,7 @@ const RestaurantMenu = () => {
   }, []);
 
   const fetchMenu = async () => {
-    const data = await fetch(`https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.5904779&lng=73.7271909&restaurantId=${resId}`);
+    const data = await fetch(`https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.5904779&lng=73.7271909&restaurantId=${resId}&page_type=DESKTOP_WEB_LISTING`);
     const json = await data.json();
     const info=json?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[8]?.card?.card?.itemCards[0]?.card?.info;
     console.log(info);

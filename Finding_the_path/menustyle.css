@@ -196,7 +196,7 @@ Variables
     height: 200px;
     width: 100%;
     border: 0.25rem solid var(--clr-gold);
-    border-radius: var(--radius);
+    border-radius: var(--radius)
     display: block;
   }
   .item-info header {
@@ -234,4 +234,37 @@ Variables
       height: 150px;
     }
   }
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px; /* Adjust this value as needed */
+    margin: 0;
+    background-color: #fff; /* Set your desired background color */
+  }
+  
+  .logo-container {
+    margin: 0;
+  }
+  
+  .menu-container {
+    margin: 0;
+  }
+  
+  .menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    align-items: center;
+  }
+  
+  .menu-items {
+    margin: 0 10px; /* Adjust the left and right margin as needed */
+  }
+  
+  .logibbtn {
+    margin-left: auto; /* Push the button to the right */
+  }
+  
   

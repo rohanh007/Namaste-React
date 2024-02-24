@@ -42,7 +42,7 @@ const AppLayout =createBrowserRouter([
       //   element:<Restaurantmenu/>, 
       // },
       {
-        path:"/restaurant/:id",
+        path:"/restaurant/:resId",
         element:<Restaurantmenu/>, 
       }
     ],

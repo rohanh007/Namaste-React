@@ -3,6 +3,7 @@ import Shimmer from "./shimmer";
 import resList from "../utils/mockdata";
 import { useState ,useEffect } from "react";
 import { Link } from "react-router-dom";
+import { DATA_API } from "../utils/constant";
 const Body = () => {
   const [ListofRes, setListofRes] = useState([]);
   const [filterListofRes, setfilterListofRes] = useState([]);
@@ -15,8 +16,15 @@ const Body = () => {
 
 // console.log(ListofRes);
     const fetchdata =async ()=>{
-       const data =await fetch("https://www.swiggy.com/mapi/homepage/getCards?lat=18.5917357&lng=73.74562809999999");
+       const data =await fetch(DATA_API);
       //console.log(data);
+      // if (!data.ok) {
+      //   console.error(`Error: ${data.status} - ${data.statusText}`);
+      //   const textResponse = await data.text();
+      //   console.log(textResponse);
+      //   // Handle error gracefully, return or throw an error
+      //   return;
+      // }
        const json =await data.json();
        //console.log(json);
        async function checkJsonData(jsonData) {
@@ -37,7 +45,7 @@ const Body = () => {
       // console.log(listdata);
       setListofRes(listdata);
       setfilterListofRes(listdata);
-    }
+    };
   //   if(ListofRes.length==0)
   // {
   //  return <Shimmer/>;
@@ -78,6 +86,9 @@ const Body = () => {
 
       </div>
       {/* </div> */}
+      <div className="">
+         
+      </div>
       <div className="cart-container">
         {/* <RestaurantCard resData={resList[0]}/>
         <RestaurantCard resData={resList[1]}/>
