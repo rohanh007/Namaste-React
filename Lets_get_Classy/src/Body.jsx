@@ -5,12 +5,14 @@ import { useState ,useEffect } from "react";
 import { Link } from "react-router-dom";
 import { DATA_API } from "../utils/constant";
 import Curat from "./Bodycomponent/Curat";
+import useCurat from "../hooks/useCurat";
 
 const Body = () => {
   const [ListofRes, setListofRes] = useState([]);
   const [filterListofRes, setfilterListofRes] = useState([]);
   const [searchtext ,setsearchtext]= useState('');
- 
+  const curatdata=useCurat(DATA_API);
+ console.log(curatdata);
   
    useEffect(()=>{
       fetchdata();
@@ -45,10 +47,12 @@ const Body = () => {
 
        //console.log(json);
       const listdata=await checkJsonData(json);
-      console.log(listdata);
+      //console.log(listdata);
       setListofRes(listdata);
       setfilterListofRes(listdata);
     };
+
+   
   //   if(ListofRes.length==0)
   // {
   //  return <Shimmer/>;
@@ -57,6 +61,10 @@ const Body = () => {
    return (ListofRes.length)===0? (
    <Shimmer/>
    ): ( <div className="body-container">
+    
+     <div className="curat-container">
+      <Curat/>
+    </div>
     {/* <div className="filter"> */}
        
       {/* <div className="search-container">
@@ -90,11 +98,9 @@ const Body = () => {
 
       </div> */}
       {/* </div> */}
-      <div className="curat-container">
-         <Curat/>
-      </div>
+    
       <div className="title-body">
-      <h2 class="res-title">Restaurants with online food delivery in {areaname}</h2>
+      <h2 className="res-title">Restaurants with online food delivery in {areaname}</h2>
       </div>
       <div className="cart-container">
        
