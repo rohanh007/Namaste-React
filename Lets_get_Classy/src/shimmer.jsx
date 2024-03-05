@@ -1,34 +1,21 @@
-const Shimmer =()=>(
-
-  <div className="card">
-        <div className="shimmerBG media">
-          {/* <img className="restaurant-image" /> */}
-          {/* <div className="discount-badge"></div> */}
-        </div>
-        <div className="shimmer-content">
-          <div className="shimmerBG title-line"></div>
-          <div className="shimmerBG title-line end">
-            {/* <span className="rating"></span>
-            <span className="separator">•</span>
-            <span className="delivery-time"></span> */}
-          </div>
-          <div className="shimmerBG content-line"></div>
-          <div className="shimmerBG content-line end"></div>
-        </div>
-    </div>
-  
-)
+import Curatshimmer from "./ShimmerComponent/Curatshimmer";
+import Shimmer from "./ShimmerComponent/Shimmercard";
 
 const Shimmerlist=()=>{
-  const shimmerlen=10;
+  const shimmerlen=12;
    const shimmerArray=Array.from({length:shimmerlen}, (_,index)=>index);
   
    return (
-    <div>
+    <div className="shimmer_card_container">
+    <div className="Curat_shimmer">
+        <Curatshimmer/>
+    </div>
+    <div className="">
       {shimmerArray.map((index) => (
         <Shimmer key={index} />
       ))}
     </div>
+  </div>
   );
 };
 
