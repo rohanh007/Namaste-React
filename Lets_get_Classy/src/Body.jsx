@@ -1,9 +1,9 @@
 import RestaurantCard from "./RestaurantCard";
-import Shimmer from "./shimmer";
+import Shimmerlist from "./shimmer";
 import resList from "../utils/mockdata";
 import { useState ,useEffect } from "react";
 import { Link } from "react-router-dom";
-import { DATA_API } from "../utils/constant";
+import { DATA_API,corsAnywhereUrl } from "../utils/constant";
 import Curat from "./Bodycomponent/Curat";
 import useCurat from "../hooks/useCurat";
 
@@ -21,7 +21,7 @@ const Body = () => {
 
 // console.log(ListofRes);
     const fetchdata =async ()=>{
-       const data =await fetch(DATA_API);
+       const data =await fetch(corsAnywhereUrl+DATA_API);
       //console.log(data);
       // if (!data.ok) {
       //   console.error(`Error: ${data.status} - ${data.statusText}`);
@@ -59,7 +59,7 @@ const Body = () => {
   // }
    const areaname=ListofRes[0]?.info?.areaName;
    return (ListofRes.length)===0? (
-   <Shimmer/>
+    <Shimmerlist/>
    ): ( <div className="body-container">
     
      <div className="curat-container">

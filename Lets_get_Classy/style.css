@@ -173,12 +173,12 @@ body{
     box-shadow: 0 6px 8px rgba(0, 0, 0, 0.1);
     background-color: #FFF;
     border-radius: 6px;
-    height: 400px;
+    height: 230px;
     overflow: hidden;
-    width: 280px; 
+    width: 210px; 
     /* margin: 40px auto; */
     margin-top: 30px;
-    margin-left: 10px;
+    margin-left: 20px;
   
   .shimmerBG {
     animation-duration: 2.2s;
@@ -214,22 +214,24 @@ body{
 
 
     .media {
-    height: 200px;
+    height:100px;
 }
 
-.p-32 {
-    padding: 32px;
+.shimmer-content{
+    padding: 0px 10px 0px 10px;
+    
 }
 
 .title-line {
     height: 24px;
     width: 100%;
     margin-bottom: 12px;
-    border-radius: 20px;
+    margin-top:10px;
+    border-radius: 15px;
 }
 
 .content-line {
-    height: 8px;
+    height: 10px;
     width: 100%;
     margin-bottom: 16px;
     border-radius: 8px;
