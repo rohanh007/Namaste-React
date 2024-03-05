@@ -3,7 +3,7 @@ import Shimmerlist from "./shimmer";
 import resList from "../utils/mockdata";
 import { useState ,useEffect } from "react";
 import { Link } from "react-router-dom";
-import { DATA_API,corsAnywhereUrl } from "../utils/constant";
+import { DATA_API} from "../utils/constant";
 import Curat from "./Bodycomponent/Curat";
 import useCurat from "../hooks/useCurat";
 
@@ -11,8 +11,8 @@ const Body = () => {
   const [ListofRes, setListofRes] = useState([]);
   const [filterListofRes, setfilterListofRes] = useState([]);
   const [searchtext ,setsearchtext]= useState('');
-  const curatdata=useCurat(DATA_API);
- console.log(curatdata);
+  //const curatdata=useCurat(DATA_API);
+  //console.log(curatdata);
   
    useEffect(()=>{
       fetchdata();
@@ -21,7 +21,7 @@ const Body = () => {
 
 // console.log(ListofRes);
     const fetchdata =async ()=>{
-       const data =await fetch(corsAnywhereUrl+DATA_API);
+       const data =await fetch(DATA_API);
       //console.log(data);
       // if (!data.ok) {
       //   console.error(`Error: ${data.status} - ${data.statusText}`);
@@ -47,7 +47,7 @@ const Body = () => {
 
        //console.log(json);
       const listdata=await checkJsonData(json);
-      //console.log(listdata);
+      console.log(listdata);
       setListofRes(listdata);
       setfilterListofRes(listdata);
     };
