@@ -1,47 +1,38 @@
-// import react from "react";
-// import { useEffect, useState } from "react/cjs/react.production.min";
+import { useEffect, useState } from "react"; const useCurat = (url) => {
+    const [curatData, setCuratData] = useState(null);
 
-// const useCurat=(url)=>{
-//     const [Curatdata , setCuratdata]=useState(null);
+    useEffect(() => {
+        const fetchData = async () => {
+            try {
+                const response = await fetch(url);
 
+                if (!response.ok) {
+                    throw new Error(`HTTP error! Status: ${response.status}`);
+                }
+                const jsonData = await response.json();
+                console.log(jsonData);
+                setCuratData(jsonData);
+            } catch (error) {
+                console.error("Error fetching Curat data:", error.message);
+            }
 
-//     useEffect=()=>{
-//         fetchdata();
-//     }
+            // async function checkJsonData(jsonData) {
+            //     for (let i = 0; i < jsonData.data.cards.length; i++) {
+            //         let datawant = jsonData?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle?.info;
+            //         if (datawant !== undefined) {
+            //             return datawant;
+            //         }
+            //     }
+            // }
+            // const curatitems = await checkJsonData(jsonData);
+            // console.log(curatitems);
+            // setCuratData(curatitems);
+        };
 
-//    const fetchdata= async()=>{
-//       const data=await fetch(url);
-//       const jsondata=data.json();
-//       setCuratdata(jsondata);
-//    }
-//    return [Curatdata];
-// }
+        fetchData();
+    }, [url]);
 
-// export default useCurat ;
-import { useEffect, useState } from "react";
-
-const useCurat = (url) => {
-  const [curatData, setCuratData] = useState(null);
-
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch(url);
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-        const jsonData = await response.json();
-        setCuratData(jsonData);
-      } catch (error) {
-        console.error("Error fetching Curat data:", error.message);
-      }
-    };
-
-    fetchData();
-  }, [url]);
-
-  return curatData;
+    return curatData;
 };
 
 export default useCurat;

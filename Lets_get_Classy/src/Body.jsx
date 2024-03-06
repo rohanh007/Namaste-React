@@ -11,8 +11,8 @@ const Body = () => {
   const [ListofRes, setListofRes] = useState([]);
   const [filterListofRes, setfilterListofRes] = useState([]);
   const [searchtext ,setsearchtext]= useState('');
-  //const curatdata=useCurat(DATA_API);
-  //console.log(curatdata);
+  const curatdata=useCurat(DATA_API);
+  console.log(curatdata);
   
    useEffect(()=>{
       fetchdata();
@@ -47,7 +47,7 @@ const Body = () => {
 
        //console.log(json);
       const listdata=await checkJsonData(json);
-      console.log(listdata);
+      //console.log(listdata);
       setListofRes(listdata);
       setfilterListofRes(listdata);
     };
