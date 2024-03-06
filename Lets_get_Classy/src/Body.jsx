@@ -11,8 +11,8 @@ const Body = () => {
   const [ListofRes, setListofRes] = useState([]);
   const [filterListofRes, setfilterListofRes] = useState([]);
   const [searchtext ,setsearchtext]= useState('');
-  const curatdata=useCurat(DATA_API);
-  console.log(curatdata);
+  const curatlist=useCurat(DATA_API);
+  console.log(curatlist);
   
    useEffect(()=>{
       fetchdata();
@@ -61,9 +61,14 @@ const Body = () => {
    return (ListofRes.length)===0? (
     <Shimmerlist/>
    ): ( <div className="body-container">
-    
+      <div className="container">
+        <div className="inner-container">
+          <h2 className="title">What's on your mind?</h2>
+        </div>
+      </div>
      <div className="curat-container">
-      <Curat/>
+      {curatlist.map(curatdishes=>(<Link className="link"  key={curatdishes.id} to=""><Curat {...curatdishes}/></Link> ))}
+      
     </div>
     {/* <div className="filter"> */}
        

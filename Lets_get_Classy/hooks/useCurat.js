@@ -10,23 +10,23 @@ import { useEffect, useState } from "react"; const useCurat = (url) => {
                     throw new Error(`HTTP error! Status: ${response.status}`);
                 }
                 const jsonData = await response.json();
-                console.log(jsonData);
-                setCuratData(jsonData);
+                async function checkJsonData(json) {
+                    for (let i = 0; i < json?.data?.cards?.length; i++) {
+                        let datawant = json?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle?.info;
+                        if (datawant !== undefined) {
+                            return datawant;
+                        }
+                    }
+                }
+                //console.log(jsonData);
+                 const curatitems = await checkJsonData(jsonData);
+                //console.log(curatitems);
+                setCuratData(curatitems);
+
             } catch (error) {
                 console.error("Error fetching Curat data:", error.message);
             }
 
-            // async function checkJsonData(jsonData) {
-            //     for (let i = 0; i < jsonData.data.cards.length; i++) {
-            //         let datawant = jsonData?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle?.info;
-            //         if (datawant !== undefined) {
-            //             return datawant;
-            //         }
-            //     }
-            // }
-            // const curatitems = await checkJsonData(jsonData);
-            // console.log(curatitems);
-            // setCuratData(curatitems);
         };
 
         fetchData();
