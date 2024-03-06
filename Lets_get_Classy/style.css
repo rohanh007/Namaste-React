@@ -247,11 +247,16 @@ body{
     }
 
 }
+.container{
+  display: flex;
+}
 .curat-container
 {
   /* margin-top: 20px;
   padding: 20px; */
   height: 200px;
+  /* display: inline;
+  float: left; */
 
   /* font-size: medium; */
   /* background-color: #45a049; */

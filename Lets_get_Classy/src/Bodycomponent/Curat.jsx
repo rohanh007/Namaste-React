@@ -1,12 +1,13 @@
-import React from 'react';
+import {Curatimage} from "../../utils/constant";
 const Curat =({
   action,
   id,
-  imageId  
+  imageId,
+  accessibility,  
   
 } )=>(
   
-    <div className="curat-container">
+    <div className="curat-container ">
       <div className="content-container">
         <div className="row">
           <div className="item">
@@ -14,8 +15,8 @@ const Curat =({
                 <div className="image-container">
                   <img
                     className="image"
-                    src={action.link}
-                    alt="restaurants curated for dosa"
+                    src={Curatimage+imageId}
+                    alt={accessibility.altText}
                     width="144" height="180" 
                   />
                 </div>
