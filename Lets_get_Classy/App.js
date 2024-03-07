@@ -2,7 +2,8 @@ import React from "react";
 import ReactDom from "react-dom/client";
 import Header from "./src/Header";
 import Body from "./src/Body";
-import About from "./src/About";
+// import About from "./src/About";
+import Help from "./src/Help";
 import Contact from "./src/Contact";
 import Error from "./src/Error";
 import Restaurantmenu from "./src/Restaurantmenu";
@@ -29,7 +30,7 @@ const AppLayout =createBrowserRouter([
       },
       {
         path:"/About",
-        element:<About/>,
+        element:<Help/>,
         
       },
       {

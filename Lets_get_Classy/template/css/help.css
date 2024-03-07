@@ -1,0 +1,57 @@
+.main-container{
+    background-color: #37718e;
+    padding:20px 120px 20px 120px ;
+}
+.header-section{
+    color: #fff;
+    margin-bottom: 37px;
+    margin-top: 37px;
+    position: relative;
+}
+.faq-list
+{
+    background: #fff;
+    contain: layout;
+}
+.faq{
+    background-color: #fff;
+    padding: 40px 60px 40px 60px;
+}
+.faq_head{
+    min-width: 260px;
+    background: #edf1f7;
+    
+}
+.faq_head ul{
+    padding: 20px 0;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 80px;
+}
+.fq_tab{
+    padding: 25px 20px;
+    margin-left: 20px;
+    cursor: pointer;
+    display: -ms-flexbox;
+    display: flex;
+    position: relative;
+} 
+.fq_span{
+margin-left: 40px;
+font-size: 16px;
+color: #535665;
+font-weight: 500;
+}
+.que_list{
+    margin: 0;
+    padding: 0;
+    box-sizing: inherit;
+    -webkit-text-size-adjust: none;
+    -webkit-tap-highlight-color: transparent;
+    -ms-text-size-adjust: none;
+    outline: none;
+}
+.heading_faq{
+  font-size: 24px;
+    font-weight: 600;
+}
