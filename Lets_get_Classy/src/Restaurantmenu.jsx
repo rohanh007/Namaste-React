@@ -4,12 +4,14 @@ import { useParams } from 'react-router-dom';
 import shimmer from './shimmer';
 import { CDN_URL } from '../utils/constant';
 import { MENU_API } from '../utils/constant';
+import Restheader from './restaurantmenuComponent/Restheader';
+import useRestheader from '../hooks/useRestheader';
 // import { FiClock } from 'react-icons/fi';
 // import { AiOutlineStar } from 'react-icons/ai';
 
 const RestaurantMenu = () => {
   const [resInfo, setResInfo] = useState([]);
-
+  //  const[headerdata ,setHeader]=useRestheader()
   const { resId } = useParams();
    console.log(resId);
 
@@ -20,9 +22,10 @@ const RestaurantMenu = () => {
   const fetchMenu = async () => {
     const data = await fetch(`https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.5904779&lng=73.7271909&restaurantId=${resId}&page_type=DESKTOP_WEB_LISTING`);
     const json = await data.json();
-    const info=json?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[8]?.card?.card?.itemCards[0]?.card?.info;
-    console.log(info);
-    setResInfo(info);
+    console.log(json);
+    const Recommended=json?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards[0]?.card?.info;
+    console.log(Recommended);
+    setResInfo(Recommended);
   };
   // console.log(resInfo.groupedCard); 
   // if (resInfo === null) return <shimmer />;
@@ -51,7 +54,11 @@ const RestaurantMenu = () => {
   // console.log(itemCards);
 
   return (
+
+    
+  
     <div className="menu">
+    <Restheader/>
       <header className="menu-header">
         <div className="menu-header-left">
           <img src={CDN_URL + imageId} alt="Restaurent Info" />
