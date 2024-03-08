@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react"; const useCurat = (url) => {
+import { useEffect, useState } from "react"; 
+const useCurat = (url) => {
     const [curatData, setCuratData] = useState(null);
 
     useEffect(() => {

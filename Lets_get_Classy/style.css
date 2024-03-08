@@ -247,14 +247,40 @@ body{
     }
 
 }
+.container{
+  display: block;
+  margin:40px 0px 20px 0px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+
+}
+.inner-container
+{
+  width: 100%;
+  
+}
 .curat-container
 {
   /* margin-top: 20px;
   padding: 20px; */
   height: 200px;
+  display: flex;
+  /* display: inline;
+  float: left; */
 
   /* font-size: medium; */
   /* background-color: #45a049; */
+}
+.image-container{
+  width: 144px;
+  height: 180px;
+  /* border-radius: 50%; */
+  overflow: hidden;
+  position: relative;
+  display: inline;
+  float: left;
+  margin:10px;
 }
 .curat-title
 {
@@ -262,7 +288,7 @@ body{
   /* background-color: #45a049; */
   margin: 10px;
 }
-.image-container {
+.shimmer-container {
   width: 110px;
   height: 150px;
   border-radius: 50%;

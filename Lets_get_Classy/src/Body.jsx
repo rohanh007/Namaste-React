@@ -61,15 +61,14 @@ const Body = () => {
    return (ListofRes.length)===0? (
     <Shimmerlist/>
    ): ( <div className="body-container">
-      <div className="container">
-        <div className="inner-container">
-          <h2 className="title">What's on your mind?</h2>
-        </div>
-      </div>
-     <div className="curat-container">
-      {curatlist.map(curatdishes=>(<Link className="link"  key={curatdishes.id} to=""><Curat {...curatdishes}/></Link> ))}
-      
-    </div>
+       <div className="container">
+         <div className="inner-container">
+           <h2 className="title">What's on your mind?</h2>
+         </div>
+         <div className="curat-container">
+           {curatlist.map(curatdishes => (<Link className="link" key={curatdishes.id} to=""><Curat {...curatdishes} /></Link>))}
+         </div>
+       </div> 
     {/* <div className="filter"> */}
        
       {/* <div className="search-container">
