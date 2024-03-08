@@ -2,7 +2,7 @@
 .header-container {
   background-color: #ffffff;
   color: #0b0b0b;
-  padding: 15px 170px 15px 170px;
+  padding: 15px 130px 15px 130px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -113,7 +113,7 @@
   text-align: center; 
 }
 
-button {
+/* button {
   cursor: pointer;
   border: 0;
   border-radius: 4px;
@@ -129,7 +129,7 @@ button:hover {
   width:;
   box-shadow: 0 0 20px rgba(104, 85, 224, 0.6);
   background-color: rgba(104, 85, 224, 1);
-}
+} */
 
 /* .order-button {
   padding: 10px;
@@ -165,7 +165,7 @@ body{
   
 }
 .body-container{
-  padding: 2px 140px 2px 250px;
+  padding: 2px 120px 2px 140px;
 }
 .shimmer_card_container{
   padding: 2px 140px 2px 220px;
@@ -344,7 +344,7 @@ body{
 .food-card {
   display: flex;
   flex-direction: column;
-  width: 210px;
+  width: 260px;
   border-radius: 10px;
   overflow: hidden;
   /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
@@ -361,8 +361,8 @@ body{
 /* Restaurant Card */
 .restaurant-card {
   position: relative;
-  width: 200px;
-  height: 100px;
+  width: 250px;
+  height: 140px;
   padding: 0px;
   overflow: hidden;
 }
@@ -376,10 +376,10 @@ body{
 /* Discount Badge */
 .discount-badge {
   position: absolute;
-  top:70px;
+  top:88px;
   right: 0px;
   left: 0px;
-  width:200px ;
+  width:250px ;
   padding: 7px 21px;
   background-color: #0000008e;
   color: #fff;

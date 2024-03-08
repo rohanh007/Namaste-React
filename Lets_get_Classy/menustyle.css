@@ -1,8 +1,4 @@
-/*
-=============== 
-Variables
-===============
-*/
+
 
 :root {
     /* dark shades of primary color*/
@@ -46,12 +42,7 @@ Variables
     --max-width: 1170px;
     --fixed-width: 620px;
   }
-  /*
-  =============== 
-  Global Styles
-  ===============
-  */
-  
+
   *,
   ::after,
   ::before {
@@ -121,9 +112,8 @@ Variables
       line-height: 1;
     }
   }
-  /*  global classes */
+
   
-  /* section */
   .section {
     width: 90vw;
     margin: 0 auto;
@@ -136,12 +126,7 @@ Variables
     }
   }
   
-  /*
-  =============== 
-  Menu
-  ===============
-  */
-  
+ 
   .menu {
     padding: 5rem 0;
   }
@@ -238,9 +223,9 @@ Variables
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 10px; /* Adjust this value as needed */
+    padding: 10px; 
     margin: 0;
-    background-color: #fff; /* Set your desired background color */
+    background-color: #fff; 
   }
   
   .logo-container {
@@ -260,11 +245,11 @@ Variables
   }
   
   .menu-items {
-    margin: 0 10px; /* Adjust the left and right margin as needed */
+    margin: 0 10px;
   }
   
   .logibbtn {
-    margin-left: auto; /* Push the button to the right */
+    margin-left: auto;
   }
   
  
