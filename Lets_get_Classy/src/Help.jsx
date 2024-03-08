@@ -1,9 +1,10 @@
-import ('../template/css/help.css');
+import('../template/css/help.css');
 // import { useEffect } from 'react/cjs/react.production.min';
-import {Help_data} from '../utils/constant';
-import { useEffect, useState } from "react"; 
+import { Help_data } from '../utils/constant';
+import { useEffect, useState } from "react";
+import Faqque from './HelpComponent/Faqque';
 const Help = () => {
-    const [Faqtitle, setFaqtitle ] = useState(null)
+    const [Faqtitle, setFaqtitle] = useState(null)
     useEffect(() => {
         const helpdata = async () => {
             try {
@@ -13,10 +14,10 @@ const Help = () => {
                 }
                 const json = await data.json();
                 console.log(json);
-                const issue=json?.data?.issueTypes?.data;
+                const issue = await json?.data?.issueTypes?.data;
                 console.log(issue);
                 setFaqtitle(issue);
-            } catch(error) {
+            } catch (error) {
                 console.error("Http error :", error.message);
             }
         }
@@ -36,39 +37,14 @@ const Help = () => {
                     <div className="faq">
                         <div className="faq_head">
                             <ul>
-                               { Faqtitle.map((issue)=>( <li className="fq_tab _1W0l-"  key={issue.type}><span className="fq_span fmxXC">{issue.title}</span></li>))
-                                                               }                               
+                                {Faqtitle.map((issue) => (<li className="fq_tab _1W0l-" key={issue.type}><span className="fq_span fmxXC">{issue.title}</span></li>))
+                                }
                                 {/* <li className="fq_tab"><span className="fq_span">Legal</span></li>
                                 <li className="fq_tab"><span className="fq_span">FAQs</span></li> */}
                             </ul>
                         </div>
                         <div className="que_list">
-                            <div>
-                                <div className="heading_faq">Partner Onboarding</div>
-                                <div>
-                                   <div className="subque">
-                                        <button className="faq-button"><span className="faq-label">I want to partner my restaurant with Swiggy</span><span className="dropdown-icon"></span></button>
-                                    </div>
-                                    <div className="subque">
-                                        <button className="faq-button"><span className="faq-label">What are the mandatory documents needed to list my restaurant on Swiggy?</span><span className="dropdown-icon"></span></button>
-                                    </div>
-                                    <div className="subque">
-                                        <button className="faq-button"><span className="faq-label">After I submit all documents, how long will it take for my restaurant to go live on Swiggy?</span><span className="dropdown-icon"></span></button>
-                                    </div>
-                                    <div className="subque">
-                                        <button className="faq-button"><span className="faq-label">What is this one time Onboarding fees? Do I have to pay for it while registering?</span><span className="dropdown-icon"></span></button>
-                                    </div>
-                                    <div className="subque">
-                                        <button className="faq-button"><span className="faq-label">Who should I contact if I need help & support in getting onboarded?</span><span className="dropdown-icon"></span></button>
-                                    </div>
-                                    <div className="subque">
-                                        <button className="faq-button"><span className="faq-label">How much commission will I be charged by Swiggy?</span><span className="dropdown-icon"></span></button>
-                                    </div>
-                                    <div className="subque">
-                                        <button className="faq-button"><span className="faq-label">I don’t have an FSSAI licence for my restaurant. Can it still be onboarded?</span><span className="dropdown-icon"></span></button>
-                                    </div>
-                                </div>
-                            </div>
+                           <Faqque/>
                         </div>
                     </div>
                 </div>
