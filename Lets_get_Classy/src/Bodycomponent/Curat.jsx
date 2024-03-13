@@ -22,4 +22,5 @@ const Curat = ({
 
 );
 
+
 export default Curat;
