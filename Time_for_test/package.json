@@ -1,0 +1,23 @@
+{
+  "name": "devfood_delivery",
+  "version": "1.0.0",
+  "description": "React js Pratice App",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "Start": "npx parcel index.html"
+  },
+  "author": "Rohan Hoval",
+  "license": "ISC",
+  "dependencies": {
+    "parcel": "^2.11.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-redux": "^9.1.0",
+    "react-router-dom": "^6.22.1"
+  },
+  "devDependencies": {
+    "postcss": "^8.4.35",
+    "process": "^0.11.10",
+    "tailwindcss": "^3.4.1"
+  }
+}
