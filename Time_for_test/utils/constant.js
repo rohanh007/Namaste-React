@@ -12,3 +12,5 @@ export const DATA_API='https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.61
 export const Curatimage="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/";
 
 export const Help_data="https://www.swiggy.com/dapi/support/";
+
+export const RESTAURANT_MENU="https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.5904779&lng=73.7271909&restaurantId=";

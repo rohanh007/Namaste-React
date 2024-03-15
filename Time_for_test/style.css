@@ -28,7 +28,7 @@
 
 }
 
-.menu {
+.menu_header {
   list-style-type: none;
   display: flex;
   gap: 40px;

@@ -6,46 +6,50 @@ import { CDN_URL } from '../utils/constant';
 import { MENU_API } from '../utils/constant';
 import Restheader from './restaurantmenuComponent/Restheader';
 import useRestheader from '../hooks/useRestheader';
+import('../template/css/restmenu.css')
 // import { FiClock } from 'react-icons/fi';
 // import { AiOutlineStar } from 'react-icons/ai';
 
 const RestaurantMenu = () => {
   const [resInfo, setResInfo] = useState([]);
-  //  const[headerdata ,setHeader]=useRestheader()
   const { resId } = useParams();
-   console.log(resId);
+  console.log(resId);
+  const [headerdata, setHeader] = useRestheader(resId)
+  console.log(headerdata);
 
   useEffect(() => {
     fetchMenu();
   }, []);
-
   const fetchMenu = async () => {
-    const data = await fetch(`https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.5904779&lng=73.7271909&restaurantId=${resId}&page_type=DESKTOP_WEB_LISTING`);
-    const json = await data.json();
-    console.log(json);
-    const Recommended=json?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards[0]?.card?.info;
-    console.log(Recommended);
-    setResInfo(Recommended);
-  };
+
+  }
+  // const fetchMenu = async () => {
+  //   const data = await fetch(`https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.5904779&lng=73.7271909&restaurantId=${resId}&page_type=DESKTOP_WEB_LISTING`);
+  //   const json = await data.json();
+  //   console.log(json);
+  //   const Recommended=json?.data?.cards[5]?.groupedCard?.cardGroupMap?.REGULAR?.cards[2]?.card?.card?.itemCards[0]?.card?.info;
+  //   console.log(Recommended);
+  //   setResInfo(Recommended);
+  // };
   // console.log(resInfo.groupedCard); 
   // if (resInfo === null) return <shimmer />;
 
-    const {
-      name,
-      imageId, 
-      price,
-      ratings,
-      description, 
-    } = resInfo;
-    // Log resInfo to check its structure
-    // console.log(name);
-    // console.log(imageId);
-    // console.log(price);
-    // console.log(ratings);
-    // console.log(description);
+  const {
+    name,
+    imageId,
+    price,
+    ratings,
+    description,
+  } = headerdata;
+  // Log resInfo to check its structure
+  // console.log(name);
+  // console.log(imageId);
+  // console.log(price);
+  // console.log(ratings);
+  // console.log(description);
 
-// console.log("Name:", name);
-// console.log("Image ID:", imageId);
+  // console.log("Name:", name);
+  // console.log("Image ID:", imageId);
 
 
   // const { itemCards } =
@@ -55,10 +59,12 @@ const RestaurantMenu = () => {
 
   return (
 
-    
-  
+
+
     <div className="menu">
-    <Restheader/>
+      <div className='menu_div'>
+      <Restheader {...headerdata} key={resId}/>
+      </div>
       <header className="menu-header">
         <div className="menu-header-left">
           <img src={CDN_URL + imageId} alt="Restaurent Info" />
@@ -93,7 +99,7 @@ const RestaurantMenu = () => {
               >
                 {/* <FiClock /> */}
               </span>
-              <span> {price/100} Rs</span>
+              <span> {price / 100} Rs</span>
             </h4>
             <h3>{description}</h3>
           </div>
@@ -123,10 +129,10 @@ const RestaurantMenu = () => {
             </div>
           ))} */}
 
-          {/* <li>{itemCards[0].card.info.name}</li>
+      {/* <li>{itemCards[0].card.info.name}</li>
         <li>{itemCards[1].card.info.name}</li>
         <li>{itemCards[2].card.info.name}</li> */}
-        {/* </div>
+      {/* </div>
       </div> */}
     </div>
   );
