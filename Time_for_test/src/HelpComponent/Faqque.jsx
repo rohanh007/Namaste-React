@@ -1,4 +1,24 @@
-const Faqque = () => {
+import { useEffect, useState } from "react";
+// import { ISSUES } from "../../utils/constant";
+
+const Faqque = ({type}) => {
+    console.log(type);
+    const [Issuelist ,setIssuelist]=useState([]);
+
+    useEffect(()=>{
+        const issuedata= async()=>{
+            try{
+                const list=  await fetch("https://www.swiggy.com/dapi/support/issues/"+type)
+                console.log(list)
+            }catch(error){
+                console.log(error);
+            }
+           
+        }
+        issuedata();
+
+    },[])
+
 
     return (
         <div>

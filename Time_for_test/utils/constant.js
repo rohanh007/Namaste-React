@@ -14,3 +14,5 @@ export const Curatimage="https://media-assets.swiggy.com/swiggy/image/upload/fl_
 export const Help_data="https://www.swiggy.com/dapi/support/";
 
 export const RESTAURANT_MENU="https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.5904779&lng=73.7271909&restaurantId=";
+
+export const ISSUES="https://www.swiggy.com/dapi/support/issues/";

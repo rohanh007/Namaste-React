@@ -7,12 +7,13 @@ const useRestheader=(id)=>{
   useEffect(()=>{
       const fetchheader=async ()=>{
         try{
-        const getdata= await fetch(RESTAURANT_MENU+id) ;
+        const getdata= await fetch(`https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.5904779&lng=73.7271909&restaurantId=${id}`) ;
         if(!getdata.ok)
         {
             throw new Error(`Http Response Error :${getdata.status}`);
         }
         const headerdata= await getdata.json() ;
+        console.log(headerdata);
         async function Checkjson(json){
           for(let i=0;i<json?.data?.cards.length ;i++)
           {
@@ -25,7 +26,7 @@ const useRestheader=(id)=>{
           }
         }
         const headinfo=await Checkjson(headerdata);
-        console.log(headinfo);
+         console.log(headinfo);
          setRestheader(headinfo);
         }catch(error){
                console.error("error message :" ,error.message)
@@ -34,7 +35,7 @@ const useRestheader=(id)=>{
       fetchheader();
   },[id])
   
-  return [Restheader]
+  return [Restheader];
 
 }
 

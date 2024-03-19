@@ -14,7 +14,7 @@ const RestaurantMenu = () => {
   const [resInfo, setResInfo] = useState([]);
   const { resId } = useParams();
   console.log(resId);
-  const [headerdata, setHeader] = useRestheader(resId)
+  const [headerdata]= useRestheader(resId)
   console.log(headerdata);
 
   useEffect(() => {
@@ -40,12 +40,12 @@ const RestaurantMenu = () => {
     price,
     ratings,
     description,
-  } = headerdata;
+  } = resInfo;
   // Log resInfo to check its structure
   // console.log(name);
   // console.log(imageId);
   // console.log(price);
-  // console.log(ratings);
+  // console.log(ratings);x
   // console.log(description);
 
   // console.log("Name:", name);
@@ -63,7 +63,8 @@ const RestaurantMenu = () => {
 
     <div className="menu">
       <div className='menu_div'>
-      <Restheader {...headerdata} key={resId}/>
+        <Restheader resId={resId} />
+
       </div>
       <header className="menu-header">
         <div className="menu-header-left">
