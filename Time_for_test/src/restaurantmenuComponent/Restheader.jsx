@@ -2,15 +2,15 @@ import useRestheader from "../../hooks/useRestheader";
 const Restheader = (resId) => {
     console.log(resId);
     const [headerdata]=useRestheader(resId)
-    // if(!headerdata.ok)
-    //     {
-    //         throw new Error(`Http Response Error :${headerdata.status}`);
-    //     }
-    //  const {
-    //     name,
+    if(!headerdata.ok)
+        {
+            throw new Error(`Http Response Error :${headerdata.status}`);
+        }
+     const {
+        name,
 
-    //  } =headerdata;
-    // console.log(headerdata);
+     } =headerdata;
+    console.log(headerdata);
     return (
         <div className="RestaurantHeader">
             <div className="HeaderWrapper MarginBottom">

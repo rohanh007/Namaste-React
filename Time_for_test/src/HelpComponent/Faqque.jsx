@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 const Faqque = ({type}) => {
     const [isOpen, setIsOpen] = useState(false);
 
-    //console.log(type);
+    console.log(type);
     const [Issuelist ,setIssuelist]=useState([]);
     
     const toggleContent = () => {
@@ -13,11 +13,11 @@ const Faqque = ({type}) => {
     useEffect(()=>{
         const issuedata= async()=>{
             try{
-                console.log("Hello ")
-                const list=  await fetch(`https://www.swiggy.com/dapi/support/issues/partner-onboarding?`)
+                console.log(type)
+                const list=  await fetch(`https://www.swiggy.com/dapi/support/issues/partner-onboarding`)
                 if(!list.ok)
                 {
-                    throw new error(`error stats${list.status}`)
+                    throw new Error(`error stats${list.status}`)
                 }
                 const jsonlist= await list.json();
                 const issues=jsonlist?.data?.issues?.data ;
@@ -36,11 +36,9 @@ const Faqque = ({type}) => {
 
     return (
         <div>
-            <div className="heading_faq">Partner Onboarding</div>
+            {Issuelist.map((issue,index)=>(
             <div>
-                {/* <div className="subque">
-                    <button className="faq-button"><span className="faq-label">I want to partner my restaurant with Swiggy</span><span className="dropdown-icon"></span></button>
-                </div> */}
+                <div className="heading_faq">Partner Onboarding</div>
                 <div className="subque">
                     <button className="faq-button" onClick={toggleContent}>
                         <span className="faq-label">I want to partner my restaurant with Swiggy</span>
@@ -48,23 +46,22 @@ const Faqque = ({type}) => {
                     </button>
                     {isOpen && (
                         <div className="faq-content">
-                            <p>Here are the steps to partner your restaurant with Swiggy:</p>
-                            <ul>
-                                <li>Step 1: Visit the Swiggy website.</li>
-                                <li>Step 2: Navigate to the partnership section.</li>
-                                <li>Step 3: Fill out the partnership form.</li>
-                                <li>Step 4: Submit the required documents.</li>
-                                <li>Step 5: Wait for approval from Swiggy.</li>
-                            </ul>
+                            <div>
+                                <a rel="noopener noreferrer" target="_blank" href="https://www.swiggy.com/partner-with-us/" className="_7bf5B">Partner with us</a>
+                                <div className="GM_Lh">
+                                    <button className="_2aDLa">
+                                        <a className="_1vMNs" href="mailto:partnersupport@swiggy.in?subject=I want to partner my restaurant with Swiggy">SEND AN EMAIL</a>
+                                        <div className="_1tK48">We will revert within 24-48 hrs</div>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     )}
                 </div>
-                {/* <details>
-                    <summary>Epcot Center</summary>
-                    <p>Epcot is a theme park at Walt Disney World Resort featuring exciting attractions, international pavilions, award-winning fireworks and seasonal special events.</p>
-                </details>   */}
             </div>
+            ))}
         </div>
+
     )
 }
 

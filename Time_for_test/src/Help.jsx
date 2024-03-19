@@ -7,7 +7,7 @@ import Faqque from './HelpComponent/Faqque';
 const Help = () => {
     const [Faqtitle, setFaqtitle] = useState([])
     const [Selectedissue ,setSelectedissue]=useState([]);
-    //console.log(Selectedissue);
+    console.log(Selectedissue);
     useEffect(() => {
         const helpdata = async () => {
             try {
@@ -52,7 +52,7 @@ const Help = () => {
                             </ul>
                         </div>
                         <div className="que_list">
-                            <Faqque type={Selectedissue} />
+                            <Faqque type={Selectedissue}   />
                         </div>
                     </div>
                 </div>
