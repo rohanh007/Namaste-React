@@ -1,23 +1,21 @@
 import useRestheader from "../../hooks/useRestheader";
 const Restheader = (resId) => {
     console.log(resId);
-    const [headerdata]=useRestheader(resId)
-    if(!headerdata.ok)
-        {
-            throw new Error(`Http Response Error :${headerdata.status}`);
-        }
+    const headerdata=useRestheader(resId)
+    console.log(headerdata)
+   
      const {
-        name,
+        name
 
      } =headerdata;
-    console.log(headerdata);
+    
     return (
         <div className="RestaurantHeader">
             <div className="HeaderWrapper MarginBottom">
                 <div className="NameAddressWrapper">
                     <div aria-hidden="true">
                         <p className="NameAddressName">{name}</p>
-                        <p className="NameAddressCuisines">{cuisines.join(', ')}</p>
+                        <p className="NameAddressCuisines"></p>
                     </div>
                     <div className="AreaWrapper" aria-label="">
                         <p className="Area" aria-hidden="true">fgfhnb</p>
@@ -31,7 +29,7 @@ const Restheader = (resId) => {
                 </div>
                 <button className="RatingsWrapper" data-testid="restaurant-ratings-header" aria-hidden="true">
                     <span className="AvgRating" aria-hidden="true">
-                        <span className="icon-star"></span> <span>{avgRating}</span>
+                        <span className="icon-star"></span> <span></span>
                     </span>
                     <span className="TotalRatings" aria-hidden="true">1K+ ratings</span>
                 </button>
