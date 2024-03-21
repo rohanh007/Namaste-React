@@ -7,6 +7,7 @@ import Faqque from './HelpComponent/Faqque';
 const Help = () => {
     const [Faqtitle, setFaqtitle] = useState([])
     const [Selectedissue ,setSelectedissue]=useState([]);
+    const [Selectedtitle ,setSelectedtitle]=useState([]);
     console.log(Selectedissue);
     useEffect(() => {
         const helpdata = async () => {
@@ -18,9 +19,9 @@ const Help = () => {
 
                 }
                 const json = await data.json();
-                console.log(json);
+                //console.log(json);
                 const issue = await json?.data?.issueTypes?.data;
-                console.log(issue);
+                //console.log(issue);
                 setFaqtitle(issue);
             } catch (error) {
                 console.error("Http error :", error.message);
@@ -45,14 +46,14 @@ const Help = () => {
                                 {Faqtitle.map((issue) => (<li
                                     className="fq_tab _1W0l-"
                                     key={issue.type}
-                                    onClick={() => setSelectedissue(issue.type)}>
+                                    onClick={() =>{ setSelectedissue(issue.type) ; setSelectedtitle(issue.title)}}>
                                     <span className="fq_span fmxXC">{issue.title}</span>
                                 </li>))
                                 }
                             </ul>
                         </div>
                         <div className="que_list">
-                            <Faqque type={Selectedissue}   />
+                            <Faqque title={Selectedtitle} issueKey={Selectedissue}  />
                         </div>
                     </div>
                 </div>

@@ -77,3 +77,69 @@ border-bottom: 1px solid #d4d5d9;
 .faq_label{
     font-size: 18px;
 }
+.faq-content{
+    color: #686b78;
+    font-size: 14px;
+    padding-right: 50px;
+    padding-bottom: 2px;
+    line-height: 1.4;
+    width: 800px;
+    margin-top: -4px;
+    white-space: pre-wrap;
+}
+.hyperlinktext{
+    color: #fc8019;
+    font-weight: 600;
+    font-size: 14px;
+    margin-right: 20px;
+    cursor: pointer;
+    letter-spacing: -.3px;
+    padding-bottom: 22px;
+    display: inline-block;
+    text-decoration: none;
+}
+.partner_div{
+    display: flex;
+    padding-bottom: 27px;
+}
+.partner_btn{
+    margin-right: 25px ;
+    background-color: #fff;
+    border: none;
+}
+.link_mail{
+    /* width: 120px; */
+    display: inline-block;
+    text-align: center;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    margin-right: 20px;
+    line-height: 40px;
+    height: 40px;
+    color: #fc8019;
+    border: 1px solid #fc8019;
+    padding: 0 15px;
+    margin-top: 20px;
+    position: relative;
+    width: auto;
+    margin: 0;
+    text-decoration: none;
+}
+
+.waittime{
+    font-size: 10px;
+    text-align: center;
+    margin-top: 5px;
+    color: #93959f;
+}
+.issue_description{
+    color: #686b78;
+    font-size: 14px;
+    padding-right: 50px;
+    padding-bottom: 27px;
+    line-height: 1.4;
+    width: 800px;
+    margin-top: -4px;
+    white-space: pre-wrap;
+}
