@@ -60,7 +60,7 @@ const Faqque = (props) => {
                                 <a rel="noopener noreferrer" target="_blank" href={issue.hyperLink} className="hyperlinktext">{issue.hyperLinkText}</a>
                                 <div className="partner_div">
                                     <button className="partner_btn">
-                                        <a className="link_mail" href={'mailto:${}?subject=I want to partner my restaurant with Swiggy'}>SEND AN EMAIL</a>
+                                        <a className="link_mail" href={`mailto:${issue.options[0].emailId}?subject=${issue.title}`}>SEND AN EMAIL</a>
                                         <div className="waittime">{issue.options[0].waitTime}</div>
                                     </button>
                                 </div>
