@@ -19,7 +19,7 @@ const useCurat = (url) => {
                         }
                     }
                 }
-                //console.log(jsonData);
+                console.log(jsonData);
                  const curatitems = await checkJsonData(jsonData);
                 //console.log(curatitems);
                 setCuratData(curatitems);

@@ -8,6 +8,7 @@ import Contact from "./src/Contact";
 import Error from "./src/Error";
 import Restaurantmenu from "./src/Restaurantmenu";
 import Offer from "./src/Offer";
+import Search from "./src/Search";
 import { createBrowserRouter ,RouterProvider, Outlet  } from "react-router-dom";
 
 
@@ -30,7 +31,12 @@ const AppLayout =createBrowserRouter([
        
       },
       {
-        path:"/About",
+        path:"/Search",
+        element:<Search/>,
+       
+      },
+      {
+        path:"/Help",
         element:<Help/>,
         
       },

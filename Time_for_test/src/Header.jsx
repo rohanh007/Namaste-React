@@ -12,9 +12,10 @@ const Header = () => {
       </div>
       <div className="menu-container">
         <ul className="menu_header">
-          <li className="menu-items"><Link className="link" to={"/"}>Search</Link></li>
+          {/* <li className="menu-items"><Link className="link" to={"/"}>Search</Link></li> */}
+          <li className="menu-items"><Link className="link" to={"/Search"}>Search</Link></li>
           <li className="menu-items"><Link className="link" to={"/Offer"}>Offers</Link></li>
-          <li className="menu-items"><Link className="link" to={"/About"}>Help</Link></li>
+          <li className="menu-items"><Link className="link" to={"/Help"}>Help</Link></li>
           {/* <li className="menu-items"><Link to={"/contact"} >Contact us</Link></li>
           <li className="menu-items"><Link to={"/Specials"}>Specials</Link></li> */}
           <li className="menu-items">Cart</li>
