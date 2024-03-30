@@ -3,7 +3,6 @@ import("../template/css/Search.css")
 import { POPULAR_SEARCH } from "../utils/constant";
 const Search = () => {
     const [Popularcuisine, SetPopularcuisine] = useState([]);
-
     useEffect(() => {
         Fetchdata = async () => {
             try {
@@ -22,6 +21,7 @@ const Search = () => {
                 }
                 const cuisine = await checkJS(json);
                 SetPopularcuisine(cuisine);
+                console.log(Popularcuisine);
 
             } catch (error) {
                 console.log(error);
@@ -34,28 +34,28 @@ const Search = () => {
 
     return (
         <div className="container">
-            <div className="search_container">
-                <div className="search_box search_outer " >
-                    <form>
-                        <div className="from_container">
-                            <div className="input_box">
-                                <input type="text" className="input" placeholder="Search for restaurants and food" />
-                            </div>
-                            <div className="search_icon">
-                                <span className="icon-magnifier"></span>
-                            </div>
-                        </div>
-                        <input type="submit" hidden="" />
-                    </form>
-                </div>
-            </div>
             <div className="Cuisine_container">
                 <div className="cuisine_inner">
                     <div className="Search_wrapper" >
-                        <div className="Search_divide _5iVPM"></div>
+                        <div className="Search_divide _5iVPM">
+                            <div className="search_container">
+                                <div className="search_box search_outer " >
+                                    <form>
+                                        <div className="from_container">
+                                            <div className="input_box">
+                                                <input type="text" className="input" placeholder="Search for restaurants and food" />
+                                            </div>
+                                            <div className="search_icon">
+                                                <span className="icon-magnifier"></span>
+                                            </div>
+                                        </div>
+                                        <input type="submit" hidden="" />
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
                         <div className="Search_widgets">
                             <div className="styles_container">
-                                
                                 <div className="styles_headerContainer">
                                     <div >
                                         <h2 className="styles_headerContainerTitle"><span>Popular Cuisines</span></h2>
