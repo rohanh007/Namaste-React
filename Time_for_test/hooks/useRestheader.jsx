@@ -24,7 +24,7 @@ const useRestheader = (id) => {
       console.log(RestHeader)
     }
     fetchheader();
-  }, [])
+  }, [id])
  console.log(RestHeader)
   return RestHeader;
 

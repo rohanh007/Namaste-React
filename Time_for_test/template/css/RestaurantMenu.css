@@ -1,0 +1,150 @@
+.restaurant-container{
+    display: flex;
+    -webkit-box-pack: center;
+    justify-content: center;
+    flex-direction: column;
+    align-items: flex-start;
+    margin-left: 16px;
+    margin-bottom: 8px;
+}
+.restaurant-name{
+    -webkit-font-smoothing: antialiased;
+    font-family: Basis_Grotesque_Pro;
+    font-weight: 800;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: -0.4px;
+    color: rgba(2, 6, 12, 0.92);
+}
+.restaurant-info{
+    background: linear-gradient(rgb(255, 255, 255) -6.71%, rgb(235, 235, 242) 56.19%, rgb(223, 223, 231) 106.56%);
+    padding: 0px 16px 16px;
+    border-bottom-left-radius: 36px;
+    border-bottom-right-radius: 36px;
+}
+.restaurant-ratings-container{
+    border-radius: 20px;
+    border: 1px solid rgba(2, 6, 12, 0.15);
+    background: white;
+    box-shadow: rgba(0, 0, 0, 0.04) 0px 8px 16px 0px;
+}
+.restaurant-rating-icon{
+    width: 20px;
+    height: 20px;
+    margin-right: 4px;
+    margin-top: -2px;
+}
+.rating-value{
+    -webkit-font-smoothing: antialiased;
+    font-family: Basis_Grotesque_Pro_Bold;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.92);
+}
+.separator{
+    margin: 0px 8px; 
+}
+.cost-for-two{
+    -webkit-font-smoothing: antialiased;
+    font-family: Basis_Grotesque_Pro_Bold;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.92);
+}
+.restaurant-cuisines{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    margin: 8px 20px;
+}
+.cuisine-type{
+    -webkit-font-smoothing: antialiased;
+    font-family: Basis_Grotesque_Pro_Bold;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 17px;
+    letter-spacing: -0.1px;
+    color: rgb(241, 87, 0);
+    text-decoration: underline;
+}
+.restaurant-location-info{
+    display: flex;
+    margin: 0px 20px;
+    padding: 4px 0px;
+    -webkit-box-align: center;
+    align-items: center;
+   
+}
+
+.location-details{
+    display: flex;
+    flex-direction: column;
+    -webkit-box-pack: center;
+    justify-content: center;
+    margin-left: 12px;
+    padding-right: 16px;
+    width: 100%;
+
+}
+.label{
+    -webkit-font-smoothing: antialiased;
+    font-family: Basis_Grotesque_Pro_Bold;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.92);
+}
+.location-name{
+    -webkit-font-smoothing: antialiased;
+    font-family: Basis_Grotesque_Pro;
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.6);
+    text-align: center;
+    max-width: 70%;
+    margin-left: 12px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.delivery-time{
+    -webkit-font-smoothing: antialiased;
+    font-family: Basis_Grotesque_Pro_Bold;
+    font-weight: 700;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.92);
+}
+.separator-line{
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    border-image: initial;
+    border-bottom: 1px solid rgb(240, 240, 245);
+    margin: 12px 0px;
+}
+ul{
+    margin: 0;
+    padding: 0;
+    list-style-type: none;
+}
+.delivery-distance-fee{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-left: 16px;
+    margin-right: 16px;
+}
+.delivery-fee-icon{
+    margin-right: 8px;
+    height: 20px;
+    width: 20px;
+}

@@ -46,7 +46,9 @@ const RestaurantMenu = () => {
    c?.card?.card?.["@type"] == "type.googleapis.com/swiggy.presentation.food.v2.Restaurant"
    );
 
-
+if(!Restaurantdetails){
+  return(<div>wait data is comming </div>)
+}
 
   return (
     <div className="menu w-6/12 justify-between">
