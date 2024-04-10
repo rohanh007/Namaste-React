@@ -165,7 +165,7 @@ body{
   
 }
 .body-container{
-  padding: 2px 120px 2px 140px;
+  padding: 2px 140px 2px 200px;
 }
 .shimmer_card_container{
   padding: 2px 140px 2px 220px;
@@ -506,10 +506,12 @@ body{
   display: grid;
     -webkit-box-align: center;
     align-items: center;
+  
     margin-top: 2px;
+    width: 246;
     gap: 2px;
 }
-.dnXOKm{
+.dnXOKm {
   -webkit-font-smoothing: antialiased;
   font-family: Basis_Grotesque_Pro;
   font-weight: 200;
@@ -519,11 +521,13 @@ body{
   color: rgba(2, 6, 12, 0.6);
   overflow: hidden;
   width: 100%;
+  white-space: nowrap;
+  text-overflow: ellipsis;
   display: -webkit-box;
   overflow-wrap: break-word;
-  -webkit-line-clamp: 1;
   -webkit-box-orient: vertical;
 }
+
 
 /* Restaurant Details */
 .restaurant-details {

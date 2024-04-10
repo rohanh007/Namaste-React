@@ -28,6 +28,12 @@
     background: white;
     box-shadow: rgba(0, 0, 0, 0.04) 0px 8px 16px 0px;
 }
+.restaurant-ratings{
+    display: flex;
+    -webkit-box-align: center;
+    align-items: center;
+    margin: 0px 16px;
+}
 .restaurant-rating-icon{
     width: 20px;
     height: 20px;
@@ -45,6 +51,13 @@
 }
 .separator{
     margin: 0px 8px; 
+    -webkit-font-smoothing: antialiased;
+    font-family: Basis_Grotesque_Pro;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.45);
 }
 .cost-for-two{
     -webkit-font-smoothing: antialiased;
@@ -55,6 +68,32 @@
     letter-spacing: -0.3px;
     color: rgba(2, 6, 12, 0.92);
 }
+.iZOSdl{
+    display: flex;
+    margin: 0px 20px;
+    padding: 4px 0px;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.hmEpaW{
+    display: flex;
+    flex-direction: column;
+    -webkit-box-align: center;
+    align-items: center;
+}
+.bGwlEe{
+    width: 7px;
+    height: 7px;
+    border-radius: 50%;
+    background: rgb(196, 196, 196);
+
+}
+.eWycnI{
+    width: 1px;
+    height: 23px;
+    background: rgb(196, 196, 196);
+}
+
 .restaurant-cuisines{
     display: flex;
     -webkit-box-align: center;
@@ -88,8 +127,12 @@
     margin-left: 12px;
     padding-right: 16px;
     width: 100%;
-
 }
+.location_inner{
+    display: flex;
+    margin-bottom: 2px;
+}
+
 .label{
     -webkit-font-smoothing: antialiased;
     font-family: Basis_Grotesque_Pro_Bold;
@@ -100,13 +143,6 @@
     color: rgba(2, 6, 12, 0.92);
 }
 .location-name{
-    -webkit-font-smoothing: antialiased;
-    font-family: Basis_Grotesque_Pro;
-    font-weight: 200;
-    font-size: 14px;
-    line-height: 18px;
-    letter-spacing: -0.3px;
-    color: rgba(2, 6, 12, 0.6);
     text-align: center;
     max-width: 70%;
     margin-left: 12px;
@@ -114,14 +150,28 @@
     overflow: hidden;
     text-overflow: ellipsis;
 }
-.delivery-time{
+.area{
     -webkit-font-smoothing: antialiased;
-    font-family: Basis_Grotesque_Pro_Bold;
-    font-weight: 700;
+    font-family: Basis_Grotesque_Pro;
+    font-weight: 200;
     font-size: 14px;
     line-height: 18px;
     letter-spacing: -0.3px;
-    color: rgba(2, 6, 12, 0.92);
+    color: rgba(2, 6, 12, 0.6);
+}
+.delivery_detail{
+    display: flex;
+    margin-top: 8px;
+    white-space: nowrap;
+}
+.delivery-time{
+    -webkit-font-smoothing: antialiased;
+    font-family: Basis_Grotesque_Pro;
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.6);
 }
 .separator-line{
     border-top: none;
@@ -131,6 +181,7 @@
     border-bottom: 1px solid rgb(240, 240, 245);
     margin: 12px 0px;
 }
+
 ul{
     margin: 0;
     padding: 0;
@@ -143,8 +194,32 @@ ul{
     margin-left: 16px;
     margin-right: 16px;
 }
+
 .delivery-fee-icon{
     margin-right: 8px;
     height: 20px;
     width: 20px;
+}
+.msg{
+    -webkit-font-smoothing: antialiased;
+    font-family: Basis_Grotesque_Pro;
+    font-weight: 200;
+    font-size: 14px;
+    line-height: 18px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.6);
+}
+.ScreenReaderOnly{
+    position: absolute;
+    clip: rect(0, 0, 0, 0);
+    display: block;
+    font-size: 1px;
+    line-height: 1px;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    overflow: hidden;
+    white-space: nowrap;
+    height: 1px;
+    width: 1px;
 }
