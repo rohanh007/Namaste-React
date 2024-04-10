@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import("../template/css/Search.css")
+import Cuisinelist from "./SearchPage/Cuisinelist";
 import { POPULAR_SEARCH } from "../utils/constant";
+import { Link } from "react-router-dom";
 const Search = () => {
     const [Popularcuisine, SetPopularcuisine] = useState([]);
     useEffect(() => {
@@ -11,6 +13,7 @@ const Search = () => {
                     throw new Error(data.status);
                 }
                 const json = await data.json();
+                console.log(json);
                 async function checkJS(jsondata) {
                     for (let i = 0; i < json?.data?.cards.length; i++) {
                         let checkdata = jsondata?.data?.cards[i]?.card?.card?.imageGridCards?.info;
@@ -33,58 +36,54 @@ const Search = () => {
 
 
     return (
-        <div className="container">
-            <div className="Cuisine_container">
-                <div className="cuisine_inner">
-                    <div className="Search_wrapper" >
-                        <div className="Search_divide _5iVPM">
-                            <div className="search_container">
-                                <div className="search_box search_outer " >
-                                    <form>
-                                        <div className="from_container">
-                                            <div className="input_box">
-                                                <input type="text" className="input" placeholder="Search for restaurants and food" />
-                                            </div>
-                                            <div className="search_icon">
-                                                <span className="icon-magnifier"></span>
-                                            </div>
-                                        </div>
-                                        <input type="submit" hidden="" />
-                                    </form>
-                                </div>
-                            </div>
-                        </div>
-                        <div className="Search_widgets">
-                            <div className="styles_container">
-                                <div className="styles_headerContainer">
-                                    <div >
-                                        <h2 className="styles_headerContainerTitle"><span>Popular Cuisines</span></h2>
-                                        <span className="styles_headerContainerSubtitle" aria-hidden="true"></span>
-                                    </div>
-                                </div>
-                                <div aria-hidden="false" >
-                                    <div className="styles_slider" data-testid="grid-slider">
-                                        <div className="styles_row" data-testid="grid-row">
-                                            <div className="styles_slide" >
-                                                <div className="Carousel_slide">
-                                                    <div>
-                                                        <div data-testid="image-info-container" className="styles_container" >
-                                                            <button data-testid="image-info-ripple" className="Ripple_container styles_containerImg">
-                                                                <img alt="" className="styles_img" loading="lazy" src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/rng/md/carousel/production/3df4fca020027e89b89c733cdffc4966`} />
-                                                            </button>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+        <div className="search_container">
+        <div className="searchbox_container">
+          <div className="search_div search_css" data-testid="search-bar">
+            <form>
+              <div className="search_box_container">
+                <div className="search">
+                  <input type="text" className="input_box" placeholder="Search for restaurants and food" maxlength="200" />
                 </div>
-            </div>
+                <div className="search_icon">
+                  <span className="icon-magnifier"></span>
+                </div>
+              </div>
+              <input type="submit" hidden="" />
+            </form>
+          </div>
         </div>
+        <div className="Cuisine_container">
+          <div className="cuisine_inner">
+            <div className="Search_wrapper__lQvnw cuisine_wrapper" data-testid="search-pl-wrapper">
+              <div className="Search_divider__3ARUS cuisine_divider"></div>
+              <div className="Search_widgetsV2__27BBR">
+                <div></div>
+              </div>
+              <div className="Search_widgetsV2__27BBR">
+                <div className="styles_container__jxIGl">
+                  <div></div>
+                  <div data-testid="grid-header" className="styles_headerContainer__2UgeD">
+                    <div style={{ padding: "28px 0px 0px 16px" }}>
+                      <h2 className="styles_headerContainerTitle"><span>Popular Cuisines</span></h2>
+                      <span className="styles_headerContainerSubtitle" aria-hidden="true"></span>
+                    </div>
+                  </div>
+                  <div data-testid="grid-container" aria-hidden="false" style={{ padding: "12px 16px 24px", marginTop: "8px", marginBottom: "8px" }}>
+                    <div className="styles_slider" data-testid="grid-slider">
+                      <div className="styles_row" data-testid="grid-row">
+                        {
+                            Popularcuisine.map(cuisine=>(<Link className="link" key={cuisine.id}><Cuisinelist imageId={cuisine.imageId}/></Link>))
+                        }
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
 
     )
 }
