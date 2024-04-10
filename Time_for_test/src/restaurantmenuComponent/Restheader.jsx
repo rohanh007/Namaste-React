@@ -1,5 +1,5 @@
 import Shimmerlist from "../shimmer";
-import("../../template/css/RestaurantMenu.css")
+// import("../../template/css/RestaurantMenu.css")
 const Restheader = ({data}) => {
       console.log(data);
       if(!data){

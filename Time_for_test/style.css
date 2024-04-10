@@ -344,17 +344,15 @@ body{
 }
 /* Food Card Container */
 .food-card {
-  display: flex;
-  flex-direction: column;
-  width: 260px;
-  border-radius: 10px;
-  overflow: hidden;
-  /* box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); */
-  transition: transform 0.3s ease-in-out;
-  /* background-color: #fff; */
-  height: 220px;
-
-  /* Add hover effect */
+  display: grid;
+  transition: all 0.05s ease 0s;
+  cursor: pointer;
+  gap: 12px;
+  grid-auto-flow: row;
+  justify-content: stretch;
+  -webkit-box-align: center;
+  align-items: center;
+  padding: 0px;
   &:hover {
     transform: scale(1.05);
   }
@@ -389,6 +387,142 @@ body{
   font-size:small;
   font-weight: bold;
   text-align: center;
+}
+.bhUeB{
+  display: grid;
+  align-content: end;
+  text-align: left;
+  padding-left: 12px;
+  padding-right: 12px;
+  padding-bottom: 8px;
+  height: calc(81px);
+  background: linear-gradient(rgba(27, 30, 36, 0) 0%, rgb(27, 30, 36) 84.21%);
+}
+.jRWNeE{
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
+  left: 0px;
+}
+.jzlukq{
+  text-transform: uppercase;
+}
+.eOcpsq{
+  -webkit-font-smoothing: antialiased;
+  font-family: ProximaNovaCond;
+  font-weight: 800;
+  font-size: 16px;
+  line-height: 16px;
+  letter-spacing: -0.4px;
+  color: rgba(255, 255, 255, 0.92);
+  overflow: hidden;
+  width: 100%;
+  display: -webkit-box;
+  overflow-wrap: break-word;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.ivxbaH{
+  -webkit-font-smoothing: antialiased;
+  font-family: ProximaNovaCond_Black;
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 22px;
+  letter-spacing: -0.5px;
+  color: rgba(255, 255, 255, 0.92);
+  overflow: hidden;
+  width: 100%;
+  display: -webkit-box;
+  overflow-wrap: break-word;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+.dMioqQ {
+  -webkit-font-smoothing: antialiased;
+    font-family: ProximaNovaCond_Extrabold;
+    font-weight: 700;
+    font-size: 12px;
+    line-height: 12px;
+    letter-spacing: -0.3px;
+    color: rgba(255, 255, 255, 0.75);
+    overflow: hidden;
+    width: 100%;
+    display: -webkit-box;
+    overflow-wrap: break-word;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.cHWThC{
+  margin: 0px;
+    -webkit-font-smoothing: antialiased;
+    font-family: Basis_Grotesque_Pro_Bold;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.75);
+    overflow: hidden;
+    width: 100%;
+    display: -webkit-box;
+    overflow-wrap: break-word;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+.sw-restaurant-card-subtext-container{
+  display: grid;
+  -webkit-box-align: center;
+  align-items: center;
+  margin-top: 2px;
+  gap: 2px;
+  grid-auto-flow: column;
+  -webkit-box-pack: start;
+  justify-content: start;
+}
+.bUjCLt{
+  -webkit-font-smoothing: antialiased;
+    font-family: Basis_Grotesque_Pro_Bold;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.75);
+    overflow: hidden;
+    width: 100%;
+    display: -webkit-box;
+    overflow-wrap: break-word;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical;
+}
+.gnOsqr{
+  -webkit-font-smoothing: antialiased;
+  font-family: Basis_Grotesque_Pro_Bold;
+  font-weight: 700;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.3px;
+  color: rgba(2, 6, 12, 0.75);
+}
+.sw-restaurant-card-descriptions-container {
+  display: grid;
+    -webkit-box-align: center;
+    align-items: center;
+    margin-top: 2px;
+    gap: 2px;
+}
+.dnXOKm{
+  -webkit-font-smoothing: antialiased;
+  font-family: Basis_Grotesque_Pro;
+  font-weight: 200;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: -0.3px;
+  color: rgba(2, 6, 12, 0.6);
+  overflow: hidden;
+  width: 100%;
+  display: -webkit-box;
+  overflow-wrap: break-word;
+  -webkit-line-clamp: 1;
+  -webkit-box-orient: vertical;
 }
 
 /* Restaurant Details */
