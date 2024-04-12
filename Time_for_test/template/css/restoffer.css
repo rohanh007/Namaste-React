@@ -1,0 +1,113 @@
+.offer_container{
+    margin: 16px;
+    cursor: pointer;
+    position: relative;
+}
+.offer_header{
+    display: flex;
+    position: absolute;
+    margin-top: 12px;
+    right: 0px;
+}
+.previous_btn{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: inline;
+    margin: 0px;
+    padding: 0px;
+    opacity: 0.5;
+}
+.margin{
+    margin-right: 12px;
+}
+.arrowcss{
+    border-radius: 100%;
+    height: 34px;
+    padding: 8px 8px 4px;
+    background: rgb(226, 226, 231);
+}
+svg:not(:root){
+    overflow: hidden;
+}
+.arrowsvg{
+    --fill-color: rgba(2, 6, 12, 0.92);
+    --stroke-color: rgba(2, 6, 12, 0.92);
+    line-height: 0;
+}
+.next_btn{
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    display: inline;
+    margin: 0px;
+    padding: 0px;
+}
+button{
+   
+    background: transparent;
+    outline: none;
+    text-align: left;
+}
+.offer_row{
+    background: rgb(255, 255, 255);
+    padding: 0px;
+    overflow: hidden;
+}
+.offer_h2{
+    background: rgb(255, 255, 255);
+    margin: 16px 0px;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    -webkit-box-align: baseline;
+    align-items: baseline;
+    overflow: hidden;
+}
+.header_box{
+    display: block; 
+}
+.header_box .title{
+    margin-bottom: 0px;
+}
+.header{
+    margin: 0px;
+    -webkit-font-smoothing: antialiased;
+    font-family: Basis_Grotesque_Pro;
+    font-weight: 800;
+    font-size: 20px;
+    line-height: 24px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.92);
+    overflow: hidden;
+    width: 100%;
+    display: -webkit-box;
+    overflow-wrap: break-word;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.empty_div{
+    -webkit-font-smoothing: antialiased;
+    font-family: Basis_Grotesque_Pro;
+    font-weight: 200;
+    font-size: 16px;
+    line-height: 19px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.92);
+    overflow: hidden;
+    width: 100%;
+    display: -webkit-box;
+    overflow-wrap: break-word;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+.offer_box{
+    overflow: scroll hidden;
+    margin-left: 0px;
+    margin-right: 0px;
+    display: flex;
+}
+.offer_row{
+    display: flex;
+}
+

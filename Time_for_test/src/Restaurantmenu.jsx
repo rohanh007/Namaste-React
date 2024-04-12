@@ -6,6 +6,8 @@ import { CDN_URL } from '../utils/constant';
 import { MENU_API } from '../utils/constant';
 import Restheader from './restaurantmenuComponent/Restheader';
 import useRestheader from '../hooks/useRestheader';
+import useRestoffer from '../hooks/useRestoffer';
+import Restoffer from './restaurantmenuComponent/Restoffer';
 import('../template/css/restmenu.css')
 // import { FiClock } from 'react-icons/fi';
 // import { AiOutlineStar } from 'react-icons/ai';
@@ -15,8 +17,8 @@ const RestaurantMenu = () => {
   const { resId } = useParams();
   console.log(resId);
   const headerdata= useRestheader(resId)
-  console.log(headerdata);
-
+  const offerlist=useRestoffer(resId);
+  console.log(offerlist)
   useEffect(() => {
     fetchMenu();
   }, []);
@@ -54,6 +56,9 @@ if(!Restaurantdetails){
     <div className="menu w-6/12 justify-between">
       <div className='menu_div'>
         <Restheader data={Restaurantdetails[0]?.card?.card} key={Restaurantdetails[0]?.card?.card?.info?.id}/>
+      </div>
+      <div className='offer_div'>
+            <Restoffer {...offerlist} key={Restaurantdetails[0]?.card?.card?.info?.id}/>
       </div>
     </div>
   );
