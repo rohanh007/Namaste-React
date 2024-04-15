@@ -53,6 +53,12 @@ const RestaurantMenu = () => {
    c?.card?.card?.["@type"] == "type.googleapis.com/swiggy.presentation.food.v2.Restaurant"
    );
 
+   const categories = Menus.filter((c) =>
+   c?.card?.card?.["@type"] == "type.googleapis.com/swiggy.presentation.food.v2.ItemCategory" ||
+   c?.card?.card?.["@type"]=="type.googleapis.com/swiggy.presentation.food.v2.NestedItemCategory"
+   );
+   console.log(categories);
+
 if(!Restaurantdetails){
   return(<div>wait data is comming </div>)
 }
@@ -78,7 +84,7 @@ if(!Restaurantdetails){
         <Toppicks {...Toppick} />
       </div>
       <div className="accordian">
-        {Menus.map((menucategories)=>(<Accordian {...menucategories} key={Menus?.card?.card?.['@title']}/>))}
+        {categories.map((menucategories)=>(<Accordian {...menucategories?.card} key={categories?.card?.card?.['@title']}/>))}
       </div>
     </div>
   );
