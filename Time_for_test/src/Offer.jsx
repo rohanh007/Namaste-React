@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import RestaurantCard from "../src/RestaurantCard";
 import { DATA_API } from "../utils/constant";
+import('../template/css/offerpage.css')
 const Offer = () => {
     const [offerdata, setOfferdata] = useState([])
 
@@ -64,7 +65,6 @@ const Offer = () => {
                     </div>
                 </div>
             </div>
-            {/* <div><RestaurantCard/></div> */}
         </div>
     );
 }

@@ -1,10 +1,14 @@
 import { Link } from 'react-router-dom';
 import Offercard from './Offercard';
 import Shimmerlist from '../shimmer';
+import Shimmer from '../ShimmerComponent/Shimmercard';
 
 import('../../template/css/restoffer.css');
 const Restoffer = ({ offers }) => {
-     console.log(offers)
+     if(!offers)
+     {
+        return  <Shimmer/>
+     }
     return  (
         <div className="offer_container">
             <div className="offer_header">
@@ -31,6 +35,7 @@ const Restoffer = ({ offers }) => {
                             <div className="empty_div"></div>
                         </div>
                     </div>
+                </div>
                     <div className="offer_box">
                         <div className="offer_row">
                              {
@@ -40,7 +45,7 @@ const Restoffer = ({ offers }) => {
                     </div>
                 </div>
             </div>
-        </div>
+        
 
     )
 }

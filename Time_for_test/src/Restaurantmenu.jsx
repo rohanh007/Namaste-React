@@ -8,6 +8,9 @@ import Restheader from './restaurantmenuComponent/Restheader';
 import useRestheader from '../hooks/useRestheader';
 import useRestoffer from '../hooks/useRestoffer';
 import Restoffer from './restaurantmenuComponent/Restoffer';
+import Toppicks from './restaurantmenuComponent/Toppicks';
+import Accordian from './restaurantmenuComponent/Accordian';
+import useToppick from '../hooks/useToppicks';
 import('../template/css/restmenu.css')
 // import { FiClock } from 'react-icons/fi';
 // import { AiOutlineStar } from 'react-icons/ai';
@@ -18,7 +21,9 @@ const RestaurantMenu = () => {
   console.log(resId);
   const headerdata= useRestheader(resId)
   const offerlist=useRestoffer(resId);
-  console.log(offerlist)
+  const [Toppick,Menus]=useToppick(resId)
+  // console.log(offerlist);
+  console.log(Menus);
   useEffect(() => {
     fetchMenu();
   }, []);
@@ -55,10 +60,25 @@ if(!Restaurantdetails){
   return (
     <div className="menu w-6/12 justify-between">
       <div className='menu_div'>
-        <Restheader data={Restaurantdetails[0]?.card?.card} key={Restaurantdetails[0]?.card?.card?.info?.id}/>
+        <Restheader data={Restaurantdetails[0]?.card?.card} key={Restaurantdetails[0]?.card?.card?.info?.id} />
       </div>
       <div className='offer_div'>
-            <Restoffer {...offerlist} key={Restaurantdetails[0]?.card?.card?.info?.id}/>
+        <Restoffer {...offerlist} key={Restaurantdetails[0]?.card?.card?.info?.id} />
+      </div>
+      <div className="menuheader">
+        <svg aria-hidden="true" height="24" width="24" className="menusvg">
+          <use xlinkHref="/core/sprite-2e61ee4e.svg#artDecoLeft24"></use>
+        </svg>
+        <div className="headertext headercss">MENU</div>
+        <svg aria-hidden="true" height="24" width="24" className="menusvg">
+          <use xlinkHref="/core/sprite-2e61ee4e.svg#artDecoRight24"></use>
+        </svg>
+      </div>
+      <div className="top_pick">
+        <Toppicks {...Toppick} />
+      </div>
+      <div className="accordian">
+        {Menus.map((menucategories)=>(<Accordian {...menucategories} key={Menus?.card?.card?.['@title']}/>))}
       </div>
     </div>
   );

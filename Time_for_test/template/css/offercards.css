@@ -75,3 +75,6 @@ img{
     -webkit-line-clamp: 1;
     -webkit-box-orient: vertical;
 }
+a{
+    text-decoration: none;
+}
