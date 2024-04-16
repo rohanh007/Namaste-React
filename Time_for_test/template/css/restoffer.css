@@ -116,6 +116,32 @@ button{
 .sperator_accordian{
     border-top: 16px solid rgba(2, 6, 12, 0.05);
 }
+.accordian{
+    padding: 15px ,5px,5px,5px;
+    margin-top: 5px;
+}
+.accordian_item{
+    position: relative;
+    margin: 24px 16px 16px;
+}
+.accordian_title{
+    width: 100%;
+    display: -webkit-box;
+    display: flex;
+    -webkit-box-pack: justify;
+    justify-content: space-between;
+    padding-right: 16px;
+    font-size: 1.15rem;
+}
+.categories_title{
+    -webkit-font-smoothing: antialiased;
+    font-family: Basis_Grotesque_Pro;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 20px;
+    letter-spacing: -0.3px;
+    color: rgba(2, 6, 12, 0.92);
+}
 
 
 

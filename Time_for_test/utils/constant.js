@@ -20,3 +20,5 @@ export const ISSUES="https://www.swiggy.com/dapi/support/issues/";
 export const POPULAR_SEARCH ="https://www.swiggy.com/dapi/landing/PRE_SEARCH?lat=18.61610&lng=73.72860";
 
 export const cuisinelist='https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/';
+
+export const categories_img="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_300,h_300,c_fit/";
