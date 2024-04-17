@@ -1,0 +1,168 @@
+div{
+    display: block;
+    unicode-bidi: isolate;
+}
+.signin_container{
+    max-width: 1200px;
+    min-width: 1200px;
+    /* position: relative; */
+    margin: 0 auto;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+}
+.signin_row{
+    position: fixed;
+    top: 0;
+    height: 100%;
+    overflow-y: scroll;
+    background: #fff;
+    transition: transform .3s ease-out;
+    z-index: 10001;
+}
+.signin_page{
+    position:relative
+}
+.signin_logo{
+    position:relative;
+    margin-bottom: 69px;
+    padding-top: 30px;
+    z-index: 1;
+
+}
+.signin_header_span{
+    color: #535665;
+    cursor: pointer;
+    font-weight: 600;
+}
+.signin_txt{
+    margin-top: 25px;
+    font-size: 30px;
+    font-weight: 500;
+}
+.signin_div{
+    width: 190px;
+    margin-top: 5px;
+}
+.litle_txt{
+    margin-top: 10px;
+    position: relative;
+}
+.signin_img{
+  position: absolute;
+  top: 58px;
+  z-index: -1;
+  right: 0;
+}
+form{
+    display: block;
+    unicode-bidi: isolate;
+}
+.signin_form_border:last-child{
+border-bottom: 1px,solid,#d4d5d9 !important;
+}
+._3Um38{
+    border: 1px solid #d4d5d9;
+    padding: 10px;
+    display: block;
+    position: relative;
+    transform: translateZ(0);
+}
+.input_box{
+    background-color: transparent;
+    line-height: normal;
+    border: none;
+    outline: none;
+    height: 70px;
+    width: 100%;
+    font-size: 17px;
+    margin: 0;
+    padding: 0 20px;
+    padding-top: 22px;
+    box-shadow: none;
+    box-sizing: border-box;
+    border-radius: 0;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    font-weight: 500;
+}
+.input_box_right{
+    position: absolute;
+    right: 20px;
+    bottom: 25px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #5d8ed5;
+    transform: translateZ(0);
+    cursor: pointer;
+    will-change: transform;
+    transition: .2s ease;
+}
+.sigin_placeholder{
+    position: absolute;
+    left: 0;
+    bottom: 14px;
+    padding-top:20px;
+    padding-left: 15px;
+    line-height: 20px;
+    font-size: 17px;
+    cursor: text;
+    transition: .2s ease;
+    width: 100%;
+    color: #93959f;
+    will-change: transform, color, font-size;
+    pointer-events: none;
+    font-weight: 400;
+}
+.button_container{
+    position: relative;
+    clear: both;
+    margin-top: 20px;
+}
+.sigin_link{
+    width: 100%;
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    border: none;
+    line-height: 50px;
+    font-size: 14px;
+    font-weight: 600;
+    height: 50px;
+    padding: 0 2rem;
+    /* color: #fc8019; */
+    letter-spacing: 0;
+    color: #fff;
+    background-color: #fc8019;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.12);
+    text-transform: uppercase;
+}
+.signin_tc{
+    font-size: 12px;
+    color: #686b78;
+    margin-top: 6px;
+    font-weight: 500;
+}
+.signup{
+    font-weight: 500;
+    cursor: pointer;
+    color: #fc8019;
+}
+.pop_overlay{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.signin_referall{
+    
+}

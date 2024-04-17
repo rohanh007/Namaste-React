@@ -9,6 +9,7 @@ import Error from "./src/Error";
 import Restaurantmenu from "./src/Restaurantmenu";
 import Offer from "./src/Offer";
 import Search from "./src/Search";
+import SignIn from "./src/Auth/SignIn";
 import { createBrowserRouter ,RouterProvider, Outlet  } from "react-router-dom";
 
 
@@ -52,7 +53,8 @@ const AppLayout =createBrowserRouter([
       {
         path:"/restaurant/:resId",
         element:<Restaurantmenu/>, 
-      }
+      },
+    
     ],
     errorElement:<Error/>
   }  
