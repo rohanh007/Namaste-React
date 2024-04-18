@@ -1,12 +1,20 @@
 import { useEffect, useState } from "react";
 import RestaurantCard from "../src/RestaurantCard";
+import Filtertype from "./Offercomponents/Filtertype";
 import { DATA_API } from "../utils/constant";
+import { Link } from "react-router-dom";
+
 import('../template/css/offerpage.css')
 const Offer = () => {
     const [offerdata, setOfferdata] = useState([])
+    const [isfilter_open ,setisfilter_open]=useState(false);
+
+    const togglefilter=()=>{
+        setisfilter_open(!isfilter_open);
+    }
 
     useEffect(() => {
-        usefetchdata =async () => {
+       const usefetchdata =async () => {
             try {
                 const data =await fetch(DATA_API)
                 //console.log(data);
@@ -36,35 +44,29 @@ const Offer = () => {
     })
     return (
         <div>
-            <div id="container-grid-filter-sort" class="StyleWrapper__ContainerGridNoPadding-sc-10ym97a-8 jxkEGY">
-                <div class="RefineWidget__RefineWidgetPlaceholder-sc-tnge6n-0 kxYTvS">
-                    <div class="RefineWidget__RefineWidgetWrapper-sc-tnge6n-2 hcMwvY">
-                        <div class="RefineWidget__RefineChip-sc-tnge6n-5 bqzcyf">
-                            <div class="RefineWidget__StyledButtonChip-sc-tnge6n-6 gmcvor">
-                                <span class="RefineWidget__StyledButtonChipSpan-sc-tnge6n-7 eLwmBD">
-                                    <span class="RefineWidget__InnerSpan-sc-tnge6n-8 btmuvL">1</span>
-                                </span>
-                                <div class="sc-beySbM kjMzQn">Filter</div>
-                                <svg><use xmlnsXlink="/core/sprite-cc704d40.svg#filter16"></use></svg>
-                            </div>
-                        </div>
-                        <div class="RefineWidget__RefineChip-sc-tnge6n-5 bqzcyf">
-                            <div class="sc-iuOPfm llxmpL">
-                                <div class="sc-beySbM iwXNGZ">Sort By</div>
-                                <svg><use xmlnsXlink="/core/sprite-cc704d40.svg#chevronDown12"></use></svg>
-                            </div>
-                        </div>
-                        <div class="RefineWidget__RefineChip-sc-tnge6n-5 bqzcyf">
-                            <div class="sc-cyZbSi bucQOg">
-                                <div class="contents">
-                                    <div class="sc-beySbM iwXNGZ">Offers</div>
-                                    <svg><use xmlnsXlink="/core/sprite-cc704d40.svg#close12"></use></svg>
-                                </div>
-                            </div>
-                        </div>
+          <div className="offerlist_container">
+                <div className="offerlist_row ">
+                     <div></div>
+                     <div className="offerlist_header ">
+                        <h1 className="headerlist_text">Restaurants With Great Offers Near Me</h1>
+                     </div>
+                     <div className="Filter_header">
+                        <ul className="filter_ul">
+                            <li className="filter_menu"><Link className="filter_click" onClick={togglefilter}>Filter</Link></li>
+                            <li className="filter_menu"><div className="filter_click">Sort By</div></li>
+                            <li className="filter_menu"><div className="filter_click">Fast Delivery</div></li>
+                            <li className="filter_menu"><div className="filter_click">New on Swiggy</div></li>
+                            <li className="filter_menu"><div className="filter_click">Rating</div></li>
+                            <li className="filter_menu"><div className="filter_click">Pure Veg</div></li>
+                            <li className="filter_menu"><div className="filter_click"></div></li>
+                           
+                        </ul>
+                     </div>
+                    <div>
+                    {isfilter_open && <Filtertype isfilter_open={isfilter_open} isfilter_close={togglefilter} />}
                     </div>
                 </div>
-            </div>
+          </div>
         </div>
     );
 }
