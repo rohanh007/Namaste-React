@@ -39,7 +39,7 @@ const Filtertype=({isfilter_open,isfilter_close })=>{
                      <div className="right_side_container">
                           {
                             data.map((data)=>{
-                                  
+                            
                             })
                           }
                      </div>

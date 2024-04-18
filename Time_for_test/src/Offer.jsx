@@ -8,7 +8,7 @@ import('../template/css/offerpage.css')
 const Offer = () => {
     const [offerdata, setOfferdata] = useState([])
     const [isfilter_open ,setisfilter_open]=useState(false);
-
+   console.log(navigator);
     const togglefilter=()=>{
         setisfilter_open(!isfilter_open);
     }
@@ -34,7 +34,7 @@ const Offer = () => {
                   }
                   const listdata=await checkJsonData(jsondata);
                   setOfferdata(listdata);
-                console.log(jsondata);
+                // console.log(jsondata);
             } catch (error) {
                console.log(error)
             }

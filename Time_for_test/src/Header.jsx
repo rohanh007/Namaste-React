@@ -1,12 +1,16 @@
 import { LOGO_URL } from "../utils/constant";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-
+import LocationPopup from "./Location/LocationPopup";
 import logo  from '../template/img/kisspng-swiggy-office-business-online-food-ordering-delive-swiggy-5b251ebbacfa27.4233904815291593557085.png';
 import SignIn from "./Auth/SignIn";
 const Header = () => {
    const [isOpen,setisOpen]=useState(false)
+   const [islocopen,setislocopen]=useState(false);
 
+   const getlocationpopup=()=>{
+    setislocopen(!islocopen);
+   }
    const togglepopup=()=>{
     setisOpen(!isOpen)
    }
@@ -15,6 +19,12 @@ const Header = () => {
     <div className="header-container">
       <div className="logo-container">
       <img className="logo" src={logo}></img>
+      <div className="getlocation">
+          <div className=""><Link  className="link" onClick={getlocationpopup}>other</Link></div>
+          <div>
+          <LocationPopup islocopen={islocopen} islocclose={getlocationpopup}></LocationPopup>
+          </div>
+      </div>
       </div>
       <div className="menu-container">
         <ul className="menu_header">
