@@ -13,24 +13,32 @@
 }
 .location_main{
     z-index: 10001;
-    width: 35%;
+    width: 40%;
     background: #fff;
     height: 100%;
     transition: transform .3s ease-out;
     position: fixed;
-    top: 0;
+    top: 0px;
     overflow-y: hidden;
     left: 0;
+    padding-left: 70px;
 }
 .location_form{
     margin: 30px 10px 20px 30px;
     padding-left: 10px;
-    padding-top: 10px;
+    padding-top: 70px;
 
 }
+.comman_both{
+     padding: 10px 10px 20px 40px;
+}
+.location_com{
+    padding-top: 25px;
+}
+
 .close_click{
-   padding-left: 50px;
-   padding-top: 10px;
+    width: 100%;
+   padding: 10px 20px 10px 50px;
 }
 .location_form{
     position: relative;
@@ -50,12 +58,12 @@
     line-height: normal;
     border: none;
     outline: none;
-    height: 70px;
+    height: 60px;
     width: 100%;
     font-size: 17px;
     margin: 0;
     padding: 0 20px;
-    padding-top: 22px;
+    padding-top: 9px;
     box-shadow: none;
     box-sizing: border-box;
     white-space: nowrap;
@@ -64,7 +72,7 @@
     font-weight: 500;
 }
 .input_pd{
-    padding-right: 70px;
+    padding-right: 10px;
 }
 .input_emp_div{
     position: absolute;
@@ -94,8 +102,47 @@
     line-height: 20px;
     cursor: text;
     transition: .2s ease;
-    width: 100%;
+    width: 100%;    
     will-change: transform, color, font-size;
     pointer-events: none;
 
+}
+.location_pick_container{
+    padding: 0;
+    border: 1px solid #d4d5d9;
+    margin-bottom: 20px;
+    left:0px;
+}
+
+.location_pick_row{
+    overflow: hidden;
+    cursor: pointer;
+}
+.location_div_btn{
+    margin: 15px 10px 20px 30px;
+    padding-top: 10px;
+    padding-left: 10px;
+}
+.icon-location-crosshair {
+    text-align: left;
+    font-size: 18px;
+    width: 32px;
+    padding-top: 0;
+    padding-left: 1px;
+    color: #535665;
+}
+.location_txt_div{
+    vertical-align: middle;
+    display: table-cell;
+}
+.location_txt{
+    font-size: 16px;
+    font-weight: 500;
+    color: #fc8019;
+}
+.location_gps{
+    font-size: 13px;
+    color: #93959f;
+    line-height: 1.3;
+    padding-top: 5px;
 }
