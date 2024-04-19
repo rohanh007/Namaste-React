@@ -7,15 +7,16 @@ const LocationPopup = ({ islocopen, islocclose }) => {
     const [SearchLocation , setSearchLocation]=useState('');
     const [getPosition ,setPosition]=useState('')   ;
     const [getlongitude,setlongitude]=useState('');
- 
+    const gotPosition=(position)=>{
+        setPosition(position);
+    }
     const Notgotposition=()=>{
         console.log("there is issue");
     }
      if (!islocopen) {
         return null;
     }
-    console.log(getPosition);
-    console.log(gotPosition());
+ console.log(getPosition);
     
     return (
         <div className="pop_overlay" onClick={islocclose}>

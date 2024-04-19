@@ -3,18 +3,18 @@ import Filtertypes from "../../Data/FIltertypes";
 import { useState } from "react";
 const Filtertype=({isfilter_open,isfilter_close })=>{
     const [getid ,setgetid]=useState(null);
-     console.log(Filtertypes[0].subtype);
-    const subtype= (Filtertypes)=>{
-       for(let i=0;i<Filtertypes.length;i++)
+    const data= Filtertypes[5].subtype;
+    // const subtype= (Filtertypes)=>{
+    //    for(let i=0;i<Filtertypes.length;i++)
 
-       {
-        if(Filtertypes[i].id===getid)
-        {
-            return Filtertypes[i]?.subtype ;
-        }
-       }
-    }
-    const data=subtype(Filtertypes);
+    //    {
+    //     if(Filtertypes[i].id===getid)
+    //     {
+    //         return Filtertypes[i]?.subtype ;
+    //     }
+    //    }
+    // }
+    // const data=subtype(Filtertypes);
     console.log(data);
     console.log(getid);
     if(!isfilter_close) return null;
@@ -39,7 +39,7 @@ const Filtertype=({isfilter_open,isfilter_close })=>{
                      <div className="right_side_container">
                           {
                             data.map((data)=>{
-                            
+                               return <div key={data.id} className="type_li"><Link className="type_click" >{data.subname}</Link></div>
                             })
                           }
                      </div>
