@@ -1,29 +1,43 @@
 import { Link } from "react-router-dom";
 import Filtertypes from "../../Data/FIltertypes";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import RestaurantCard from "../RestaurantCard";
+import ('../../template/css/Filter_css_swiggy.css');
 const Filtertype=({isfilter_open,isfilter_close })=>{
     const [getid ,setgetid]=useState(null);
-    const data= Filtertypes[5].subtype;
-    // const subtype= (Filtertypes)=>{
-    //    for(let i=0;i<Filtertypes.length;i++)
+    const [getsubtype,setsubtype]=useState(null);
+    
+       useEffect(()=>{
+               const subtypedata=()=>{
 
-    //    {
-    //     if(Filtertypes[i].id===getid)
-    //     {
-    //         return Filtertypes[i]?.subtype ;
-    //     }
-    //    }
-    // }
-    // const data=subtype(Filtertypes);
-    console.log(data);
+                   for(let i=0;i<Filtertypes.length;i++)
+                   {
+                    if(Filtertypes[i].id===getid){
+                        let subtypedata= Filtertypes[i].subtype;
+                    }
+                   }
+                   return subtypedata
+               }
+               const datatypes=subtypedata();
+               setsubtype(datatypes);
+               console.log(datatypes);
+       },[getid])
+      if(!getsubtype)
+      {
+        return null;
+      }
+
+    console.log(getsubtype);
+  
     console.log(getid);
     if(!isfilter_close) return null;
 
     return (
         <div  className="filter_popup_container">
-            <div className="filter_mini_container">
+            {/* <div className="filter_mini_container">
                   <div className="mini_header">
                      <h3>Filter</h3>
+                     <span className="" onClick={isfilter_close}>close</span>
                   </div>
                   <div className="sm_seperaotar"></div>
                   <div  className="content_div">
@@ -31,21 +45,23 @@ const Filtertype=({isfilter_open,isfilter_close })=>{
                       <div className="typeul">
                         {
                             Filtertypes.map((item)=>{
-                                return <div key={item.id} className="type_li"><Link className="type_click" onClick={()=>{setgetid(item.id)}}>{item.name}</Link></div>
+                                return <div key={item.id} className="type_li"><Link className="type_click" onClick={()=>{setgetid(item.id) ,setsubtype(item.subtype)}}>{item.name}</Link></div>
                             })
                         }
                       </div>
                      </div>
                      <div className="right_side_container">
                           {
-                            data.map((data)=>{
+                            getsubtype.map((data)=>{
                                return <div key={data.id} className="type_li"><Link className="type_click" >{data.subname}</Link></div>
                             })
                           }
                      </div>
 
-                  </div>
-            </div>
+                  </div> */}
+            {/* </div> */}
+       
+        
         </div>
     )
 }

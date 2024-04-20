@@ -13,7 +13,7 @@ const SignIn =({isOpen ,isClose ,children})=>{
     }
     if (!isOpen) return null;
     return (
-        <div className='pop_overlay'>
+        <div className='pop_overlay' >
         <div className="signin_container">
             <div className="signin_row" style={{ left: "auto", right: "0px", transform: "translate(0%, 0px)" }}>
                 <div className="signin_page">

@@ -32,7 +32,7 @@ const RestaurantCard = ({
         <div className="cuisine-type">{cuisines.join(", ")}</div>
         <div className="location">{locality}</div>
       </div> */}
-      <div style={{ marginLeft: '12px' }}>
+      <div style={{ marginLeft: '12px' }} className="overflow_hidden">
         <div>
           <div className="sc-aXZVg cHWThC">{name}</div>
         </div>
