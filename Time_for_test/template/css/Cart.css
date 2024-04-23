@@ -1,0 +1,25 @@
+.cart_main_container{
+   min-height: 100%;
+   background-color:#e9ecee;
+   flex-grow: 1;
+}
+.cart_main_screen{
+    height: calc(100vh-80px);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    margin: 150px auto;
+    text-align: center;
+    background-color: #fff;
+}
+.cart_empty_div{
+    width: 271px;
+    height: 256px;
+ 
+    background-image: url("https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/2xempty_cart_yfxml0");
+    background-repeat: no-repeat;
+    background-size: contain;
+    margin: 0 auto;
+}

@@ -225,7 +225,7 @@ svg:not(:root)
     -webkit-box-orient: vertical;
 }
 .top_pick_cards{
-    overflow: scroll hidden;
+    overflow-x: hidden;
     margin-left: -16px;
     margin-right: -16px;
 }

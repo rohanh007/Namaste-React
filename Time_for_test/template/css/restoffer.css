@@ -102,10 +102,11 @@ button{
     -webkit-box-orient: vertical;
 }
 .offer_box{
-    overflow: scroll hidden;
+    overflow:hidden;
     margin-left: 0px;
     margin-right: 0px;
     display: flex;
+
 }
 .offer_row{
     display: flex;

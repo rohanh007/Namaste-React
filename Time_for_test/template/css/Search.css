@@ -129,7 +129,7 @@ form{
 }
 .styles_slider{
     display: flex;
-    overflow-x: scroll;
+    overflow-x:hidden;
     overflow-y: hidden;
     scroll-snap-type: x mandatory;
     -webkit-box-orient: vertical;

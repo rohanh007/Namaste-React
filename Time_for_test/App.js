@@ -11,6 +11,7 @@ import Offer from "./src/Offer";
 import Search from "./src/Search";
 import SignIn from "./src/Auth/SignIn";
 import { createBrowserRouter ,RouterProvider, Outlet  } from "react-router-dom";
+import Cart from "./src/Cart";
 
 
 const PageLayout =() =>(
@@ -53,6 +54,10 @@ const AppLayout =createBrowserRouter([
       {
         path:"/restaurant/:resId",
         element:<Restaurantmenu/>, 
+      },
+      {
+        path:"/cart",
+        element:<Cart/>, 
       },
     
     ],

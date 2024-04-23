@@ -1,6 +1,9 @@
 import { cuisinelist } from "../../utils/constant";
+import { useRef } from "react";
 const Cuisinelist=(props)=>{
      const imageId=props.imageId;
+
+    
     return (
     <div className="styles_slide" style={{ marginRight: "10px" }}>
   <div className="Carousel_slide">

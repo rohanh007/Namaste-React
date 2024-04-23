@@ -58,33 +58,33 @@ const Offer = () => {
                     <div className="RefineWidget_filter_container">
                     <div className="RefineWidget_header_container">
                       <div className="refine_header">Filter</div>
-                      <svg aria-hidden="true" height="16" width="16" className="close_sign">
+                      {/* <svg aria-hidden="true" height="16" width="16" className="close_sign">
                         <use xlinkHref="/core/sprite-cc704d40.svg#filter16"></use>
-                      </svg>
+                      </svg> */}
                     </div>
                   </div>
                   <div className="RefineWidget_filter_container">
                     <div className="RefineWidget_header_container">
                       <div className="refine_header">Sort By</div>
-                      <svg aria-hidden="true" height="16" width="16" className="close_sign">
+                      {/* <svg aria-hidden="true" height="16" width="16" className="close_sign">
                         <use xlinkHref="/core/sprite-cc704d40.svg#filter16"></use>
-                      </svg>
+                      </svg> */}
                     </div>
                   </div>
                   <div className="RefineWidget_filter_container">
                     <div className="RefineWidget_header_container">
                       <div className="refine_header">Fast Delivery</div>
-                      <svg aria-hidden="true" height="16" width="16" className="close_sign">
+                      {/* <svg aria-hidden="true" height="16" width="16" className="close_sign">
                         <use xlinkHref="/core/sprite-cc704d40.svg#filter16"></use>
-                      </svg>
+                      </svg> */}
                     </div>
                   </div>
                   <div className="RefineWidget_filter_container">
                     <div className="RefineWidget_header_container">
                       <div className="refine_header">New on Swiggy </div>
-                      <svg aria-hidden="true" height="16" width="16" className="close_sign">
+                      {/* <svg aria-hidden="true" height="16" width="16" className="close_sign">
                         <use xlinkHref="/core/sprite-cc704d40.svg#filter16"></use>
-                      </svg>
+                      </svg> */}
                     </div>
                   </div>
                   <div className="RefineWidget_filter_container">

@@ -16,7 +16,7 @@ const Body = () => {
   
    useEffect(()=>{
       fetchdata();
-   },[ListofRes]);
+   },[]);
 
 
 // console.log(ListofRes);

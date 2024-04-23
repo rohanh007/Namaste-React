@@ -19,6 +19,7 @@
 }
 .RefineWidget_filter_container{
     margin-right: 8px;
+    margin-left: 8px;
     white-space: nowrap;
 }
 .RefineWidget_header_container{
@@ -30,6 +31,7 @@
     width: max-content;
     grid-auto-flow: column;
     gap: 8px;
+    
     box-shadow: rgba(2, 6, 12, 0.04) 0px 2px 12px;
     transition: all 100ms ease-in 0s;
 }
