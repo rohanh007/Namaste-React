@@ -4,13 +4,14 @@
    flex-grow: 1;
 }
 .cart_main_screen{
-    height: calc(100vh-80px);
+    height:500px;
     width: 100%;
     display: flex;
     align-items: center;
     flex-direction: column;
     justify-content: center;
-    margin: 150px auto;
+    margin:120px auto;
+    
     text-align: center;
     background-color: #fff;
 }
@@ -23,3 +24,242 @@
     background-size: contain;
     margin: 0 auto;
 }
+.cart_main_header{
+    margin-top: 24px;
+    font-size: 20px;
+    font-weight: 600;
+    color: #535665;
+}
+.cart_detail{
+    margin-top: 8px;
+    color: #7e808c;
+}
+.cart_button{
+    margin-top: 30px;
+    padding: 11px 20px;
+    text-transform: uppercase;
+    background-color: #fc8019;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    border: 0;
+    outline: 0;
+    font-size: 15px;
+    text-align: center;
+    transform: translateY(0);
+    transition: transform .8s cubic-bezier(.2,1,.2,1);
+}
+
+.popupwarning_div{
+    transform: translateY(-30px) !important;
+    opacity: 1;
+}
+.warning_popup{
+    position: fixed;
+    bottom: 0;
+    transform: translateY(100%);
+    width: 100%;
+    z-index: 10002;
+    transition: opacity .3s, transform .3s;
+    will-change: opacity, transform;
+    pointer-events: none;
+}
+.internal_warning{
+    display: table;
+    max-width: 400px;
+    padding: 0;
+    margin: 0 auto;
+    background: #3d4152;
+    pointer-events: auto;
+    color: #fff;
+}
+.warning_internal_popup{
+    align-items: center;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    padding: 12px 15px;
+    position: relative;
+    box-shadow: 0 3px 15px 0 rgba(40,44,63,.3);
+    min-height: 50px;
+}
+.warning_img{
+    margin-right: 10px;
+    display: flex;
+    align-items: center;
+}
+.warning_text{
+    flex: 1;
+}
+warning_txt{
+    font-weight: 500;
+}
+
+.cart_main_footer{
+    max-width: 1200px;
+    min-width: 1200px;
+    position: relative;
+    margin: 0 auto;
+    display: flex;
+    margin-bottom: 150px;
+}
+.footer_left_side_container{
+    flex: 1;
+    margin-right: 30px;
+    position: relative;
+}
+.footer_first_small_container{
+    position: relative;
+    margin-left: 25px;
+    background: #fff;
+    margin-bottom: 20px;
+    padding: 35px 40px 39px;
+}
+.fs_msg{
+    font-size: 1.3rem;
+    font-weight: 600;
+    color: #282c3f;
+    margin-bottom: 32px;
+    display: flex;
+    align-items: center;
+}
+.fs_txt{
+    margin-right: 25px;
+}
+.retry_btn{
+    text-decoration: none;
+    cursor: pointer;
+    display: inline-block;
+    text-align: center;
+    font-size: 14px;
+    font-weight: 600;
+    height: 50px;
+    padding: 0 2rem;
+    letter-spacing: 0;
+    border: 1px solid #fc8019;
+    color: #fff;
+    background-color: #fc8019;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.12);
+    width: auto;
+    text-transform: uppercase;
+    height: 40px;
+    line-height: 40px;
+}
+.fs_logo_container{
+    position: absolute;
+    width: 40px;
+    height: 40px;
+    background-color: #282c3f;
+    box-shadow: 0 3px 5px 0 rgba(40,44,63,.4);
+    top: 34px;
+    left: -30px;
+}
+.fs_logo{
+    background: url("https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/Restuarant_closed_ilvdr7.png");
+    background-repeat: no-repeat;
+    position: relative;
+    font-size: inherit;
+    width: 70%;
+    height: 70%;
+    display: block;
+    background-size: contain;
+}
+.fs_span{
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: #fff;
+}
+.footer_second_container{
+    margin-top: -30px;
+}
+.ss_txt{
+    color: #7e808c;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 1.12;
+}
+.ss_img{
+    position: absolute;
+    right: 40px;
+    top: 35px;
+}
+img{
+    text-decoration: none;
+}
+.btn_ss_container{
+    display: flex;
+    margin-top: 36px;
+}
+.btn_txt_name{
+    border: 1px solid #60b246;
+    color: #60b246;
+    margin-right: 20px;
+}
+.btn_ss_txt{
+    text-align: center;
+    padding: 8px 35px 9px;
+    line-height: 1.2;
+    cursor: pointer;
+}
+.btn_click_ss{
+    font-size: 13px;
+}
+.btn_login_ss{
+    font-weight: 600;
+    font-size: 14px;
+}
+.second_ss_btn_container{
+    background-color: #60b246;
+    color: #fff;
+    text-align: center;
+    padding: 8px 35px 9px;
+    line-height: 1.2;
+    cursor: pointer;
+
+}
+.second_ss_txt{
+    font-size: 13px;
+}
+
+.footer_right_side_container{
+    width: 366px;
+    margin-left: 70px;
+}
+.footer_right_side_row{
+    height: 100%;
+    }
+
+.footer_main_cart{
+    padding: 0 30px;
+    width: 366px;
+    overflow-x: hidden;
+    overflow-y: auto;
+    background: transparent !important;
+    position: relative;
+}
+
+.footer_empty_cart{
+color: #7e808c;
+    letter-spacing: -.3px;
+    font-size: 32px;
+    font-weight: 600;
+}
+.footer_img_ca{
+    margin-top: 47px;
+    opacity: .5;
+    width: 100%;
+    height: 212px;
+    }
+
+.footer_text-_ep{
+    color: #93959f;
+    margin-top: 15px;
+    font-size: 16px;
+    font-weight: 300;
+    max-width: 218px;
+    }
+
+    .cart_footer{
+    display: flex;
+    }
