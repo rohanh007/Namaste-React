@@ -12,14 +12,18 @@ import Search from "./src/Search";
 import SignIn from "./src/Auth/SignIn";
 import { createBrowserRouter ,RouterProvider, Outlet  } from "react-router-dom";
 import Cart from "./src/Cart";
+import { Provider } from "react-redux";
+import appStore from "./utils/appStore";
 
 
 const PageLayout =() =>(
+  <Provider store={appStore}>
    <div className="App-container">
      <Header></Header>
      <Outlet/>
      {/* <Body/> */}
     </div>
+    </Provider>
 )
 
 const AppLayout =createBrowserRouter([

@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import LocationPopup from "./Location/LocationPopup";
 import logo  from '../template/img/kisspng-swiggy-office-business-online-food-ordering-delive-swiggy-5b251ebbacfa27.4233904815291593557085.png';
 import SignIn from "./Auth/SignIn";
+import { useSelector } from "react-redux";
 const Header = () => {
    const [isOpen,setisOpen]=useState(false)
    const [islocopen,setislocopen]=useState(false);
@@ -14,7 +15,9 @@ const Header = () => {
    const togglepopup=()=>{
     setisOpen(!isOpen)
    }
-   
+
+   const cart=useSelector((store)=>(store.cart.items));
+   console.log(cart);
   return (
     <div className="header-container">
       <div className="logo-container">
@@ -34,7 +37,7 @@ const Header = () => {
           <li className="menu-items"><Link className="link" to={"/Help"}>Help</Link></li>
           {/* <li className="menu-items"><Link to={"/contact"} >Contact us</Link></li>
           <li className="menu-items"><Link to={"/Specials"}>Specials</Link></li> */}
-          <li className="menu-items"><Link className="link" to={"/cart"}>Cart</Link></li>
+          <li className="menu-items"><Link className="link" to={"/cart"}>Cart- items({cart.length})</Link></li>
           {/* <button className="menu-items logibbtn" onClick={()=>{
             btnnamereact=="LogIn" ? setbtnnamereact("LogOut"):setbtnnamereact("LogIn")
           }}>{btnnamereact}</button> */}

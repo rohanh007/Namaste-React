@@ -1,3 +1,6 @@
+import { useDispatch } from 'react-redux';
+import { addItem } from '../../Slices/Cartslice';
+
 import('../../template/css/toppickcard.css')
 const Toppickcard=({
     creativeId,
@@ -8,10 +11,14 @@ const Toppickcard=({
     const {
          name,
          price,
-         defaultPrice,
+         defaultPrice,  
          description
     }=dish?.info;
-
+    console.log(dish);
+    const dispatch=useDispatch();
+    const handlecart=()=>{
+        dispatch(addItem(dish));
+    }
     return(
         <div className="tp_cardbox">
             <div className="tp_Card_container" style={{ backgroundImage: "url('https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/portal/m/green_placeholder')" }}>
@@ -33,7 +40,7 @@ const Toppickcard=({
                                             <button className="btncss add_div">
                                                 <div className="add">Add</div>
                                             </button>
-                                            <button className="btncss addcss add-button-center-container">
+                                            <button className="btncss addcss add-button-center-container" onClick={handlecart}>
                                                 <div className="add">Add</div>
                                             </button>
                                             <button className="btncss countcss">
