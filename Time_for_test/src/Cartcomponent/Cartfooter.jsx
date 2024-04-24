@@ -1,4 +1,9 @@
-const Cartfooter=()=>{
+import { useSelector } from "react-redux";
+import Cartwithdata from "./Cartwithdata";
+
+const Cartfooter = () => {
+    const cart = useSelector((store) => (store.cart.items));
+
     return (
         <div className="cart_footer">
             <div className="footer_left_side_container">
@@ -53,13 +58,20 @@ const Cartfooter=()=>{
             </div>
             <div className="footer_right_side_container">
                 <div className="footer_right_side_row">
-                    <div className="">
-                        <div className="footer_main_cart">
-                            <div className="footer_empty_cart">Cart Empty</div>
-                            <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_480/Cart_empty_-_menu_2x_ejjkf2" className="footer_img_ca" alt="empty cart img" />
-                            <div className="footer_text-_ep">Good food is always cooking! Go ahead, order some yummy items from the menu.</div>
+                    {cart.length === 0 ? (
+                        <div className="">
+                            <div className="footer_main_cart">
+                                <div className="footer_empty_cart">Cart Empty</div>
+                                <img src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_480/Cart_empty_-_menu_2x_ejjkf2" className="footer_img_ca" alt="empty cart img" />
+                                <div className="footer_text-_ep">Good food is always cooking! Go ahead, order some yummy items from the menu.</div>
+                            </div>
                         </div>
-                    </div>
+                    ) : (
+                        <div>
+                          <Cartwithdata/>
+                        </div>
+                    )}
+
                 </div>
 
             </div>
