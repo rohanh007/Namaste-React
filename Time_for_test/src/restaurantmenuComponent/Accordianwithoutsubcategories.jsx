@@ -4,7 +4,7 @@ import { addItem } from '../../Slices/Cartslice';
 
 import('../../template/css/accordiancategories.css')
 const Accordianwithoutsubcategories=({card})=>{
-    console.log(card?.info)
+    const data=card;
     const  {
         imageId,
         name,
@@ -15,10 +15,9 @@ const Accordianwithoutsubcategories=({card})=>{
     }=card?.info
    
     const dispatch=useDispatch();
-
-    const handleonclick=()=>{
-         dispatch(addItem("pizza")) 
-    }
+     const handleonclick=()=>{
+       dispatch(addItem(data))
+     }
     return (
         <div>
         <div data-testid="normal-dish-item" className="items_container">
@@ -65,10 +64,10 @@ const Accordianwithoutsubcategories=({card})=>{
                         <div className="item_sign">−</div>
                       </button>
                       <div className="item_add">
-                        <button className="item_btn add_btn" onClick={handleonclick}>
+                        <button className="item_btn add_btn" >
                           <div className="item_sign">Add</div>
                         </button>
-                        <button className="item_btn item_ad_btn add-button-center-container">
+                        <button className="item_btn item_ad_btn add-button-center-container" onClick={handleonclick}>
                           <div className="item_sign">Add</div>
                         </button>
                         <button className="item_btn item_one">

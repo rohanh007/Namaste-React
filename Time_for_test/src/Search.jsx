@@ -70,7 +70,7 @@ const Search = () => {
                   </div>
                   <div data-testid="grid-container" aria-hidden="false" style={{ padding: "12px 16px 24px", marginTop: "8px", marginBottom: "8px" }}>
                     <div className="styles_slider" data-testid="grid-slider">
-                      <div className="styles_row" data-testid="grid-row">
+                      <div className="styles_row" data-testid="grid-row" >
                         {
                             Popularcuisine.map(cuisine=>(<Link className="link" key={cuisine.id}><Cuisinelist imageId={cuisine.imageId}/></Link>))
                         }

@@ -17,7 +17,7 @@ const Restoffer = ({ offers }) => {
     if(offerref.current)
     {
         offerref.current.scrollBy({
-            left:-200,
+            left:-400,
             behavior:'smooth',
         });
     }
@@ -28,7 +28,7 @@ const Restoffer = ({ offers }) => {
     if(offerref.current)
     {
         offerref.current.scrollBy({
-            left:200,
+            left:400,
             behavior:'smooth',
         })
     }
@@ -62,8 +62,8 @@ const Restoffer = ({ offers }) => {
                         </div>
                     </div>
                 </div>
-                    <div className="offer_box" ref={offerref}>
-                        <div className="offer_row">
+                    <div className="offer_box" >
+                        <div className="offer_row" ref={offerref}>
                              {
                                 offers.map((offer)=>(<Link key={offer?.info?.offerIds} ><Offercard {...offer?.info}/></Link>))
                              }

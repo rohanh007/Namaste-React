@@ -51,6 +51,7 @@ button{
 }
 .offer_row{
     background: rgb(255, 255, 255);
+    display: flex;
     padding: 0px;
     overflow: hidden;
 }
@@ -108,9 +109,9 @@ button{
     display: flex;
 
 }
-.offer_row{
+/* .offer_row{
     display: flex;
-}
+} */
 .space_div{
     margin-bottom: 16px;
 }
