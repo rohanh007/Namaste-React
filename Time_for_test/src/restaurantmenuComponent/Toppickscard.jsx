@@ -17,7 +17,7 @@ const Toppickcard=({
     console.log(dish);
     const dispatch=useDispatch();
     const handlecart=()=>{
-        dispatch(addItem(dish));
+        dispatch(addItem(dish.info));
     }
     return(
         <div className="tp_cardbox">

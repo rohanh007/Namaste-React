@@ -13,7 +13,7 @@ const Accordianwithoutsubcategories=({card})=>{
         ratings,
         defaultPrice
     }=card?.info
-   
+   console.log(card); 
     const dispatch=useDispatch();
      const handleonclick=()=>{
        dispatch(addItem(data))

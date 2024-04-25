@@ -2,14 +2,21 @@ import { useSelector } from 'react-redux';
 import '../../template/css/Cartwithdata.css';
 const Cartwithdata=()=>{
      const cartdata= useSelector((store)=>(store.cart.items))
-     console.log(cartdata[0].info);
+     console.log(cartdata);
+
+     const {
+        imageId,
+        name,
+     }=cartdata;
+
+
     return (
         <div className="cartwithdata_container">
             <button className="cartwithdata_btn_head">
                 <span className="cartwithdata_img_head">
                     <img
                         className=""
-                        imageurl="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_100,h_100,c_fill/490629b70f89da8a5b93fc199ece335e"
+                        imageurl={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_100,h_100,c_fill/`}
                         height="50"
                         width="50"
                         imageid=""
