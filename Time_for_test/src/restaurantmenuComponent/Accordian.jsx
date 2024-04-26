@@ -1,9 +1,14 @@
 import { useState } from "react";
 import Accordianwithoutsubcategories from "./Accordianwithoutsubcategories";
 import Accordiansubcategories from "./Accordiansubcategories";
+import { useParams } from "react-router-dom";
 import('../../template/css/restoffer.css')
-const Accordian = ({ card }) => {
+const Accordian = ({ card}) => {
     console.log(card);
+   
+
+    const id =useParams();
+    console.log(id);
     const {
         title,
         "@type": cardtype,

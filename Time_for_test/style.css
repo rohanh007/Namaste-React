@@ -266,7 +266,7 @@ body{
   padding: 20px; */
   height: 200px;
   display: flex;
-  overflow-x:visible;
+  overflow:hidden;
   width: 100%;
   /* display: inline;
   float: left; */

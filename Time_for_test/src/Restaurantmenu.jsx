@@ -84,7 +84,7 @@ if(!Restaurantdetails){
         <Toppicks {...Toppick} />
       </div>
       <div className="accordian">
-        {categories.map((menucategories)=>(<Accordian {...menucategories?.card} key={categories?.card?.card?.['@title']}/>))}
+        {categories.map((menucategories)=>(<Accordian {...menucategories?.card} key={categories?.card?.card?.['@title']} />))}
       </div>
     </div>
   );

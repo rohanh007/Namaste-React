@@ -1,14 +1,25 @@
 import { useSelector } from 'react-redux';
 import '../../template/css/Cartwithdata.css';
+import useRestaurantname from '../../hooks/useRestaurantname';
+import { Link } from 'react-router-dom';
+import Cartaddeddata from './Cartaddeddata';
 const Cartwithdata=()=>{
      const cartdata= useSelector((store)=>(store.cart.items))
      console.log(cartdata);
-
+      
      const {
-        imageId,
+        resId
+     }=cartdata[0][1];
+     console.log(resId);
+     const getresname=useRestaurantname(resId);
+     const {
         name,
-     }=cartdata;
-
+        locality,
+        cloudinaryImageId
+     }=getresname;
+     console.log(name);
+     console.log(locality);
+     console.log(cloudinaryImageId);
 
     return (
         <div className="cartwithdata_container">
@@ -21,12 +32,12 @@ const Cartwithdata=()=>{
                         width="50"
                         imageid=""
                         alt="img renderer"
-                        src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_100,h_100,c_fill/490629b70f89da8a5b93fc199ece335e"
+                        src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_100,h_100,c_fill/${cloudinaryImageId}`}
                     />
                 </span>
                 <span className="cartwithdata_txt_head">
-                    <div className="cartwithdata_txt_name">Pizza Hut</div>
-                    <div className="cartwithdata_txt_city">Punawale</div>
+                    <div className="cartwithdata_txt_name">{name}</div>
+                    <div className="cartwithdata_txt_city">{locality}</div>
                 </span>
             </button>
             <div className="datacart_container">
@@ -51,22 +62,13 @@ const Cartwithdata=()=>{
                                 </div>
                             </div>
                             {/* More items here */}
-                            <div className="datacart_row_product">
-                                <div className="cartdatacontainer">
-                                    <div className="offercartdata_row">
-                                        <i className="icon-food" role="presentation" aria-hidden="true" style={{ lineHeight: '1.2' }}></i>
-                                        <div className="datacart_txt_name">Margherita Pizza<div className="offer_data_txt">1 Free Delight for you</div></div>
-                                    </div>
-                                    <div className="offer_data_cart_container">
-                                        <div className="offer_data_cart_row">
-                                            <div className="offer_data_cart_div">
-                                                <div className="offer_data_cart_count_product">1</div>
-                                                <div className="offer_data_cart">Free</div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
+                            {
+                              cartdata.map((data,index)=>(
+                                   <Link key={index}><Cartaddeddata {...data[0]?.info} /></Link>
+                              ))
+                             
+                           
+                            }
                         </div>
                         {/* <div className="_2JQh7" style={{ height: '51px' }}>
                             <textarea className="aeGJF" maxLength="140" style={{}}></textarea>

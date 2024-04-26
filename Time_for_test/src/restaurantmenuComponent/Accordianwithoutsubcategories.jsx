@@ -1,5 +1,7 @@
 import { useDispatch } from 'react-redux';
+import { useParams } from 'react-router-dom';
 import { categories_img } from '../../utils/constant';
+import useRestaurantname from '../../hooks/useRestaurantname';
 import { addItem } from '../../Slices/Cartslice';
 
 import('../../template/css/accordiancategories.css')
@@ -13,10 +15,15 @@ const Accordianwithoutsubcategories=({card})=>{
         ratings,
         defaultPrice
     }=card?.info
-   console.log(card); 
+    
+    const resId= useParams();
+    console.log(resId);
+    // const restinfo=useRestaurantname(resId);
+    // console.log(restinfo); 
+    
     const dispatch=useDispatch();
      const handleonclick=()=>{
-       dispatch(addItem(data))
+       dispatch(addItem([data, resId]))
      }
     return (
         <div>

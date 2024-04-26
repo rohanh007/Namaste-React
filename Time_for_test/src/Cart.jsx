@@ -1,8 +1,9 @@
 import '../template/css/Cart.css';
 import { useSelector } from "react-redux";
 import Cartfooter from './Cartcomponent/Cartfooter';
+import useRestaurantname from '../hooks/useRestaurantname';
 const Cart = () => {
-     
+   
     const cart=useSelector((store)=>store.cart.items)
      console.log(cart);
     return (

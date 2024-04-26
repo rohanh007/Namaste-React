@@ -1,9 +1,15 @@
 import { useSelector } from "react-redux";
 import Cartwithdata from "./Cartwithdata";
+import SignIn from "../Auth/SignIn";
+import { useState } from "react";
 
 const Cartfooter = () => {
+         
+    const [isopen ,setisopen]=useState(false);
     const cart = useSelector((store) => (store.cart.items));
-
+     const toggletoopen=()=>{
+           setisopen(!isopen);
+     }
     return (
         <div className="cart_footer">
             <div className="footer_left_side_container">
@@ -25,11 +31,11 @@ const Cartfooter = () => {
                             <div className="ss_txt">To place your order now, log in to your existing account or sign up.</div>
                             <img className="ss_img" imageid="Image-login_btpq7r" height="140" width="147" imageurl="" alt="img renderer" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_147,h_140/Image-login_btpq7r" />
                             <div className="btn_ss_container">
-                                <div className="btn_txt_name btn_ss_txt">
+                                {/* <div className="btn_txt_name btn_ss_txt">
                                     <div className="btn_click_ss">Have an account?</div>
                                     <div className="btn_login_ss">LOG IN</div>
-                                </div>
-                                <div className="second_ss_btn_container">
+                                </div> */}
+                                <div className="second_ss_btn_container"  onClick={toggletoopen}>
                                     <div className="second_ss_txt">New to Swiggy?</div>
                                     <div className="btn_login_ss">SIGN UP</div>
                                 </div>
@@ -71,7 +77,9 @@ const Cartfooter = () => {
                           <Cartwithdata/>
                         </div>
                     )}
-
+                     <div>
+                        <SignIn isOpen={isopen} isClose={toggletoopen}></SignIn>
+                     </div>
                 </div>
 
             </div>

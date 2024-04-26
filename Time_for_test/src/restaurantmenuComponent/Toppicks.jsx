@@ -58,11 +58,11 @@ const Toppicks=({carousel})=>{
                     </div></div>
             </div>
             <div className="top_pick_cards" ref={containerref}>
-              <div  className="top_pick_card">
-                {
-                     toppick.map((card)=>(<Toppickcard key={card?.bannerId} {...card}/>))
-                }
-              </div>
+                <div className="top_pick_card">
+                    {
+                        toppick.map((card) => (<Toppickcard key={card?.bannerId} {...card} />))
+                    }
+                </div>
             </div>
             <div class="space_div"></div>
             <div class="sperator_accordian"></div>
