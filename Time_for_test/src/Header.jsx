@@ -2,6 +2,11 @@ import { LOGO_URL } from "../utils/constant";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import LocationPopup from "./Location/LocationPopup";
+import { CiSearch } from "react-icons/ci";
+import { BiSolidOffer } from "react-icons/bi";
+import { RiShoppingCartLine } from "react-icons/ri";
+import { IoIosHelpCircleOutline } from "react-icons/io";
+import { CiUser } from "react-icons/ci";
 import logo  from '../template/img/kisspng-swiggy-office-business-online-food-ordering-delive-swiggy-5b251ebbacfa27.4233904815291593557085.png';
 import SignIn from "./Auth/SignIn";
 import { useSelector } from "react-redux";
@@ -32,16 +37,16 @@ const Header = () => {
       <div className="menu-container">
         <ul className="menu_header">
           {/* <li className="menu-items"><Link className="link" to={"/"}>Search</Link></li> */}
-          <li className="menu-items"><Link className="link" to={"/Search"}>Search</Link></li>
-          <li className="menu-items"><Link className="link" to={"/Offer"}>Offers</Link></li>
-          <li className="menu-items"><Link className="link" to={"/Help"}>Help</Link></li>
+          <li className="menu-items"><Link className="link" to={"/Search"}><span><CiSearch/></span>Search</Link></li>
+          <li className="menu-items"><Link className="link" to={"/Offer"}><span><BiSolidOffer/></span>Offers</Link></li>
+          <li className="menu-items"><Link className="link" to={"/Help"}><span><IoIosHelpCircleOutline/></span>Help</Link></li>
           {/* <li className="menu-items"><Link to={"/contact"} >Contact us</Link></li>
           <li className="menu-items"><Link to={"/Specials"}>Specials</Link></li> */}
-          <li className="menu-items"><Link className="link" to={"/cart"}>Cart- items({cart.length})</Link></li>
+          <li className="menu-items"><Link className="link" to={"/cart"}><span><RiShoppingCartLine/></span>({cart.length})Cart</Link></li>
           {/* <button className="menu-items logibbtn" onClick={()=>{
             btnnamereact=="LogIn" ? setbtnnamereact("LogOut"):setbtnnamereact("LogIn")
           }}>{btnnamereact}</button> */}
-          <li className="menu-items"><Link className="link" onClick={togglepopup}>SignIn</Link></li>
+          <li className="menu-items"><Link className="link" onClick={togglepopup}><span><CiUser /></span>SignIn</Link></li>
           <div>
             <SignIn isOpen={isOpen}  isClose={togglepopup}/>
           </div>

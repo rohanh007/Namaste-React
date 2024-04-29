@@ -2,6 +2,8 @@ import RestaurantCard from "./RestaurantCard";
 import Shimmerlist from "./shimmer";
 import resList from "../utils/mockdata";
 import { useState ,useEffect, useRef } from "react";
+import { FaArrowRightLong } from "react-icons/fa6";
+import { FaArrowLeftLong } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { DATA_API} from "../utils/constant";
 import Curat from "./Bodycomponent/Curat";
@@ -84,15 +86,16 @@ const Body = () => {
     <div className="offer_header">
         <button aria-label="click here to move previous" className="previous_btn" disabled="" onClick={handlePreviousClick}>
           <div className="arrowcss margin">
+          
             <svg aria-hidden="true" height="16" width="16" className="arrowsvg">
-              <use xlinkHref="/core/sprite-2e61ee4e.svg#arrowBack16"></use>
+               <FaArrowLeftLong/>
             </svg>
           </div>
         </button>
         <button aria-label="click here to move next" className="next_btn" onClick={handlenextclick}>
           <div className="arrowcss">
             <svg aria-hidden="true" height="16" width="16" className="sc-iGgWBj kDDZoM">
-              <use xlinkHref="/core/sprite-2e61ee4e.svg#arrowFront16"></use>
+            <FaArrowRightLong/>
             </svg>
           </div>
         </button>

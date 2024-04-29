@@ -1,5 +1,7 @@
 import { useState } from "react";
 import Accordianwithoutsubcategories from "./Accordianwithoutsubcategories";
+import { FaAngleDown } from "react-icons/fa";
+import { FaAngleUp } from "react-icons/fa";
 import Accordiansubcategories from "./Accordiansubcategories";
 import { useParams } from "react-router-dom";
 import('../../template/css/restoffer.css')
@@ -29,7 +31,7 @@ const Accordian = ({ card}) => {
                         : itemCards && itemCards.length
                             ? itemCards.length
                             : 0} */}
-                    <div>{isActive ? '-' : '+'}</div>
+                    <div>{isActive ? <FaAngleUp/>: <FaAngleDown />}</div>
                 </div>
                 <div>
                     {isActive && <div>
