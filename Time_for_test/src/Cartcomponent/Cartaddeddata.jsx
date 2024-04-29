@@ -5,23 +5,26 @@ const Cartaddeddata=(info)=>{
       price
     }=info;
     return (
-        <div className="datacart_row_product">
-        <div className="cartdatacontainer">
-            <div className="offercartdata_row">
-                <i className="icon-food" role="presentation" aria-hidden="true" style={{ lineHeight: '1.2' }}></i>
-                <div className="datacart_txt_name">{name}<div className="offer_data_txt">1 Free Delight for you</div></div>
+        <div className="cartaddeddata_container">
+            <div className="cartaddeddata_product_name_container">
+                <i className="styles_icon__m6Ujp _2MJB6 icon-Veg styles_iconVeg__shLxJ" role="presentation" aria-hidden="true" style={{ lineHeight: '1.2' }}></i>
+                <div className="cartaddeddata_name_product">Combo for 1 Veg<button className="customize_btn">Customize</button></div>
             </div>
-            <div className="offer_data_cart_container">
-                <div className="offer_data_cart_row">
-                    <div className="offer_data_cart_div">
-                        <div className="offer_data_cart_count_product">1</div>
-                        <div className="offer_data_cart">{(price)/100}</div>
+            <div className="add_price_count-container">
+                <div className="add_mutiple_count_container">
+                    <div className="mutiple_addpro mutiple_addpro_two">
+                        <div className="multiple_addpro_add_one multiple_addpro_add_two multiple_addpro_add_three ">ADD</div>
+                        <div className="multiple_addpro_add_three M_addpro_plus_I M_addpro_plus_II">+</div>
+                        <div className="addpro_plus_sign">+</div>
+                        <div className="addpro_empty"></div>
+                        <div className="addpro_count">1</div>
                     </div>
+                    <div className="price_container_add"><span className="add_pro_price">359</span></div>
                 </div>
             </div>
         </div>
-    </div>
+
     )
 }
 
-export default Cartaddeddata ;
+export default Cartaddeddata;

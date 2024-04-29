@@ -45,7 +45,7 @@ const Cartwithdata=()=>{
                     <div className="empty_datacart"></div>
                     <div className="datacart_main_container">
                         <div>
-                            <div className="datacart_row">
+                            <div className="datacart_row_">
                                 <div className="cartdatacontainer">
                                     <div className="offercartdata_row">
                                         <i className="icon-food" role="presentation" aria-hidden="true" style={{ lineHeight: '1.2' }}></i>
