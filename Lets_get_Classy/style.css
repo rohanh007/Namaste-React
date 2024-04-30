@@ -252,7 +252,7 @@ body{
   margin:40px 0px 20px 0px;
   white-space: nowrap;
   overflow: hidden;
-  width: 90;
+  width: 90%;
   text-overflow: ellipsis;
 
 }
