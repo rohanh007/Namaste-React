@@ -4,6 +4,7 @@ import Cuisinelist from "./SearchPage/Cuisinelist";
 import { DATA_API, POPULAR_SEARCH } from "../utils/constant";
 import useSearch from "../hooks/useSearch";
 import { Link } from "react-router-dom";
+import { useSelector } from "react-redux";
 const Search = () => {
   const [Popularcuisine, SetPopularcuisine] = useState([]);
   const [searchdata, setsearchdata] = useState([]);
@@ -37,6 +38,9 @@ const Search = () => {
     }
     Fetchdata();
   },[]);
+
+  const searchre=useSelector((store)=>store.Searchres)
+  console.log(searchre);
 
   const curat=useRef(null);
    const handlethescroll =()=>{

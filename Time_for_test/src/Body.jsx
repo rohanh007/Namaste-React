@@ -1,11 +1,13 @@
 import RestaurantCard from "./RestaurantCard";
 import Shimmerlist from "./shimmer";
 import resList from "../utils/mockdata";
+import { useDispatch } from "react-redux";
 import { useState ,useEffect, useRef } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { FaArrowLeftLong } from "react-icons/fa6";
 import { Link } from "react-router-dom";
 import { DATA_API} from "../utils/constant";
+import { addsearchres } from "../Slices/Searchlistslice.js";
 import Curat from "./Bodycomponent/Curat";
 import useCurat from "../hooks/useCurat";
 import('../template/css/restmenu.css');
@@ -41,38 +43,42 @@ const Body = () => {
     }
  }
 // console.log(ListofRes);
-    const fetchdata =async ()=>{
-       const data =await fetch(DATA_API);
-      //console.log(data);
-      // if (!data.ok) {
-      //   console.error(`Error: ${data.status} - ${data.statusText}`);
-      //   const textResponse = await data.text();
-      //   console.log(textResponse);
-      //   // Handle error gracefully, return or throw an error
-      //   return;
-      // }
-       const json =await data.json();
-       //console.log(json);
-       async function checkJsonData(jsonData) {
-        for (let i = 0; i < jsonData?.data?.cards.length; i++) {
+  const fetchdata = async () => {
+    const data = await fetch(DATA_API);
+    //console.log(data);
+    // if (!data.ok) {
+    //   console.error(`Error: ${data.status} - ${data.statusText}`);
+    //   const textResponse = await data.text();
+    //   console.log(textResponse);
+    //   // Handle error gracefully, return or throw an error
+    //   return;
+    // }
+    const json = await data.json();
+    //console.log(json);
+    async function checkJsonData(jsonData) {
+      for (let i = 0; i < jsonData?.data?.cards.length; i++) {
 
-          // initialize checkData for Swiggy Restaurant data
-          let checkData = json?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
+        // initialize checkData for Swiggy Restaurant data
+        let checkData = json?.data?.cards[i]?.card?.card?.gridElements?.infoWithStyle?.restaurants;
 
-          // if checkData is not undefined then return it
-          if (checkData !== undefined) {
-            return checkData;
-          }
+        // if checkData is not undefined then return it
+        if (checkData !== undefined) {
+          return checkData;
         }
       }
+    }
 
        //console.log(json);
       const listdata=await checkJsonData(json);
       //console.log(listdata);
       setListofRes(listdata);
       setfilterListofRes(listdata);
-    };
 
+      const dispatchdata=useDispatch();
+      dispatchdata(addsearchres(ListofRes)) 
+  };
+   
+  
    
   //   if(ListofRes.length==0)
   // {
@@ -81,7 +87,7 @@ const Body = () => {
    const areaname=ListofRes[0]?.info?.areaName;
    return (ListofRes.length)===0? (
     <Shimmerlist/>
-  ) : (<div className="body-container">
+  ) : (<div className="body-container" onLoad={handleonload}>
     <div className="container">
     <div className="offer_header">
         <button aria-label="click here to move previous" className="previous_btn" disabled="" onClick={handlePreviousClick}>
@@ -165,7 +171,7 @@ const Body = () => {
         <RestaurantCard resData={resList[12]}/> */}
 
       {filterListofRes.map(restaurant =>
-      (<Link className="link" key={restaurant?.info?.id} to={'/restaurant/' + restaurant?.info?.id}><RestaurantCard {...restaurant?.info} /></Link>
+      (<Link className="link" key={restaurant?.info?.id} to={'/restaurant/' + restaurant?.info?.id}><RestaurantCard {...restaurant?.info}  /></Link>
       ))}
     </div>
   </div>)
