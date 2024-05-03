@@ -336,6 +336,13 @@ body{
 }
 .link{
   text-decoration: none;
+  font-size: 17px;
+  font-weight: 800;
+  color: #5f5d5d;
+}
+.ofspacebetween{
+  padding: 9px;
+  
 }
 .title-body{
   padding: 10px;

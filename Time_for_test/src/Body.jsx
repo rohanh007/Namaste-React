@@ -23,7 +23,7 @@ const Body = () => {
   
    useEffect(()=>{
       fetchdata();
-   },[]);
+   }, []);
 
    const handlePreviousClick = () => {
     if (containerref.current) {
@@ -74,9 +74,11 @@ const Body = () => {
       setListofRes(listdata);
       setfilterListofRes(listdata);
 
-      const dispatchdata=useDispatch();
-      dispatchdata(addsearchres(ListofRes)) 
+  
+
   };
+
+  
    
   
    
@@ -87,10 +89,10 @@ const Body = () => {
    const areaname=ListofRes[0]?.info?.areaName;
    return (ListofRes.length)===0? (
     <Shimmerlist/>
-  ) : (<div className="body-container" onLoad={handleonload}>
+  ) : (<div className="body-container" >
     <div className="container">
     <div className="offer_header">
-        <button aria-label="click here to move previous" className="previous_btn" disabled="" onClick={handlePreviousClick}>
+        <button aria-label="click here to move previous" className="previous_btn" disabled="" >
           <div className="arrowcss margin">
           
             <svg aria-hidden="true" height="16" width="16" className="arrowsvg">

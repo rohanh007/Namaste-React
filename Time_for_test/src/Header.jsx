@@ -37,16 +37,16 @@ const Header = () => {
       <div className="menu-container">
         <ul className="menu_header">
           {/* <li className="menu-items"><Link className="link" to={"/"}>Search</Link></li> */}
-          <li className="menu-items"><Link className="link" to={"/Search"}><span><CiSearch/></span>Search</Link></li>
-          <li className="menu-items"><Link className="link" to={"/Offer"}><span><BiSolidOffer/></span>Offers</Link></li>
-          <li className="menu-items"><Link className="link" to={"/Help"}><span><IoIosHelpCircleOutline/></span>Help</Link></li>
+          <li className="menu-items"><Link className="link" to={"/Search"}><span className="ofspacebetween"><CiSearch/></span><span>Search</span></Link></li>
+          <li className="menu-items"><Link className="link" to={"/Offer"}><span className="ofspacebetween"><BiSolidOffer/></span><span>Offers</span></Link></li>
+          <li className="menu-items"><Link className="link" to={"/Help"}><span className="ofspacebetween"><IoIosHelpCircleOutline/></span><span>Help</span></Link></li>
           {/* <li className="menu-items"><Link to={"/contact"} >Contact us</Link></li>
           <li className="menu-items"><Link to={"/Specials"}>Specials</Link></li> */}
-          <li className="menu-items"><Link className="link" to={"/cart"}><span><RiShoppingCartLine/></span>({cart.length})Cart</Link></li>
+          <li className="menu-items"><Link className="link" to={"/cart"}><span className="ofspacebetween"><RiShoppingCartLine/></span><span>({cart.length})Cart</span></Link></li>
           {/* <button className="menu-items logibbtn" onClick={()=>{
             btnnamereact=="LogIn" ? setbtnnamereact("LogOut"):setbtnnamereact("LogIn")
           }}>{btnnamereact}</button> */}
-          <li className="menu-items"><Link className="link" onClick={togglepopup}><span><CiUser /></span>SignIn</Link></li>
+          <li className="menu-items"><Link className="link" onClick={togglepopup}><span className="ofspacebetween"><CiUser /></span><span>SignIn</span></Link></li>
           <div>
             <SignIn isOpen={isOpen}  isClose={togglepopup}/>
           </div>

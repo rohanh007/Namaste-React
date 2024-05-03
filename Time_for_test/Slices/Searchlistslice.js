@@ -8,10 +8,11 @@ const Createslice=createSlice({
     reducers:{
         addsearchres:(state ,actions)=>{
             state.items.push(actions.payload);
+            console.log("hey   .... ")
         }
     }
 
 })
 
-export const  {addsearchres}=Createslice.actions;
-export default Createslice.reducer;
+export const { addsearchres } = Createslice.actions;
+export const searchresReducer = Createslice.reducer;

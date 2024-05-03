@@ -8,6 +8,7 @@ import { useSelector } from "react-redux";
 const Search = () => {
   const [Popularcuisine, SetPopularcuisine] = useState([]);
   const [searchdata, setsearchdata] = useState([]);
+  const [filterdata ,setfilterdata]=useState([])
   const restaurantsdata=useSearch();
   console.log(restaurantsdata);
   useEffect(() => {
@@ -39,8 +40,15 @@ const Search = () => {
     Fetchdata();
   },[]);
 
-  const searchre=useSelector((store)=>store.Searchres)
-  console.log(searchre);
+  // const searchre=useSelector((store)=>store.Searchres)
+  // console.log(searchre);
+
+  const filterlistdata=restaurantsdata.filter((res)=>(
+    res.info.name.toLowerCase().includes(searchdata.toLowerCase()) ||
+    res.info.locality.toLowerCase().includes(searchdata.toLowerCase())
+   ))
+   
+setfilterdata(filterlistdata);
 
   const curat=useRef(null);
    const handlethescroll =()=>{
@@ -53,7 +61,7 @@ const Search = () => {
       }
    } 
 
-
+//  console.log(filterdata);
   return (
     <div className="search_container">
       <div className="searchbox_container">
@@ -99,16 +107,9 @@ const Search = () => {
                   </div>
                 </div>
               </div>) : (
+
                 <div>
-                  <button className="search_subtypes" data-testid="autosuggest-item">
-                    <div className="search_subtypes_img">
-                      <img className="search_subtypes_img" imageurl="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_112,h_112,c_fill/2b4f62d606d1b2bfba9ba9e5386fabb7" imageid="" alt="img renderer" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_112,h_112,c_fill/2b4f62d606d1b2bfba9ba9e5386fabb7" />
-                    </div>
-                    <div className="search_subtypes_div">
-                      <div className="search_subtypes_name">Pizza <b>Hut</b></div>
-                      <div className="search_subtypes_subname">Restaurant</div>
-                    </div>
-                  </button>
+                 
                   <button className="search_subtypes" data-testid="autosuggest-item">
                     <div className="search_subtypes_img">
                       <img className="search_subtypes_img" imageurl="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_112,h_112,c_fill/2b4f62d606d1b2bfba9ba9e5386fabb7" imageid="" alt="img renderer" src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_112,h_112,c_fill/2b4f62d606d1b2bfba9ba9e5386fabb7" />
