@@ -1,5 +1,6 @@
 
 import { useState } from 'react';
+import { IoMdClose } from "react-icons/io";
 import('../../template/css/Signin.css')
 const SignIn =({isOpen ,isClose ,children})=>{
     const [isSignup ,setisSignup]=useState(false);
@@ -20,7 +21,7 @@ const SignIn =({isOpen ,isClose ,children})=>{
                     <div className="">
                         <div style={{ paddingLeft: "40px", paddingRight: "160px", width: "562px" }}>
                             <div className="signin_logo" style={{ height: "130px" }}>
-                                <span className="signin_header_span icon-close-thin" onClick={isClose}>close</span>
+                                <span className="signin_header_span icon-close-thin" onClick={isClose}><IoMdClose/></span>
                                 <div className="signin_txt">{isSignup ? ("SignUp"):("Login")}</div>
                                 <div className="signin_div"></div>
                                 <div className="litle_txt">or <a className="signup" onClick={Signuptoggle} >{isSignup ? ("login "):("Create account")}</a></div>

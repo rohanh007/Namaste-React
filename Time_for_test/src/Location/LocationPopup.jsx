@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { IoMdClose } from "react-icons/io";
 import { Link } from 'react-router-dom';
 
 import('../../template/css/location.css');
@@ -23,7 +24,7 @@ const LocationPopup = ({ islocopen, islocclose }) => {
             <div className="location_row" >
                 <div className='location_main' onClick={(e) => { e.stopPropagation() }} >
                     <div className='location_form'>
-                        <div className='close_click'><Link onClick={islocclose}>close</Link></div>
+                        <div className='close_click'><Link onClick={islocclose}><IoMdClose/></Link></div>
                          <div className='comman_both location_com'>
                             <div className="location_main_form ">
                                 <input className="input_txt input_body input_pd" type="text" name="" placeholder="Search for area, street name.." value={SearchLocation}  onChange={(e)=>{setSearchLocation(e.target.value.trim())}}/>
