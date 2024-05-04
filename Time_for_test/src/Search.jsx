@@ -238,18 +238,22 @@ const Search = () => {
     const value = e.target.value;
     setsearchdata(value);
   };
-
+// console.log(restaurantsdata[1].info.name)
   // Debounce the filtering function to avoid too many re-renders
   const debouncedFilter = useRef(debounce((value) => {
+    console.log(value);
     const filterlistdata = restaurantsdata.filter((res) => (
+      console.log("herlloooooo"),
       res.info.name.toLowerCase().includes(value.toLowerCase()) ||
       res.info.locality.toLowerCase().includes(value.toLowerCase())
     ));
     setfilterdata(filterlistdata);
   }, 300)).current;
-
+ console.log(restaurantsdata);
+ console.log(debouncedFilter("KFC"));
   useEffect(() => {
     debouncedFilter(searchdata);
+    console.log(searchdata)
   }, [searchdata]);
 
   const curat = useRef(null);
@@ -315,8 +319,8 @@ const Search = () => {
                         <img className="search_subtypes_img" imageurl={item.imageUrl} imageid={item.id} alt="img renderer" src={item.imageUrl} />
                       </div>
                       <div className="search_subtypes_div">
-                        <div className="search_subtypes_name">{item.name}</div>
-                        <div className="search_subtypes_subname">{item.type}</div>
+                        <div className="search_subtypes_name">{item.info.name}</div>
+                        <div className="search_subtypes_subname">{item.info.type}</div>
                       </div>
                     </button>
                   ))}
