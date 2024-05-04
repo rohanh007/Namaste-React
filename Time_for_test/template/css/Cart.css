@@ -107,6 +107,7 @@ warning_txt{
     flex: 1;
     margin-right: 30px;
     position: relative;
+    width: 780px;
 }
 .footer_first_small_container{
     position: relative;
@@ -114,6 +115,7 @@ warning_txt{
     background: #fff;
     margin-bottom: 20px;
     padding: 35px 40px 39px;
+    
 }
 .fs_msg{
     font-size: 1.3rem;
@@ -149,10 +151,16 @@ warning_txt{
     position: absolute;
     width: 40px;
     height: 40px;
-    background-color: #282c3f;
+    background-color: #0d0d0d;
     box-shadow: 0 3px 5px 0 rgba(40,44,63,.4);
     top: 34px;
     left: -30px;
+    justify-content: center;
+    align-items: center;
+    
+}
+.logo_padding{
+    padding-top: 12px;
 }
 .fs_logo{
     background: url("https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto/Restuarant_closed_ilvdr7.png");
@@ -163,12 +171,15 @@ warning_txt{
     height: 70%;
     display: block;
     background-size: contain;
+    
 }
 .fs_span{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     color: #fff;
+    padding: 10px;
+    
 }
 .footer_second_container{
     margin-top: -30px;

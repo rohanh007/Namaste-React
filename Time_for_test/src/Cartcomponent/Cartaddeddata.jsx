@@ -19,7 +19,7 @@ const Cartaddeddata=(info)=>{
                         <div className="addpro_empty"></div>
                         <div className="addpro_count">1</div> */}
                     </div>
-                    <div className="price_container_add"><span className="add_pro_price">{(price)/100}</span></div>
+                    <div className="price_container_add"><span className="add_pro_price">{price ? (price/100):(defaultPrice/100)}</span></div>
                 </div>
             </div>
         </div>

@@ -39,7 +39,7 @@ const Toppicks=({carousel})=>{
                 <button aria-label="click here to move previous" className="previous_btn" disabled="" onClick={handlePreviousClick}>
                     <div className="arrowcss margin">
                         <svg aria-hidden="true" height="16" width="16" className="arrowsvg">
-                            <FaArrowRightLong/>
+                            <FaArrowLeftLong/>
                         </svg>
                     </div>
                 </button>

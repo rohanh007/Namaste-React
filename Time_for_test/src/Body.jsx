@@ -91,7 +91,7 @@ const Body = () => {
     <Shimmerlist/>
   ) : (<div className="body-container" >
     <div className="container">
-    <div className="offer_header">
+    <div className="offer_header offer_arrows">
         <button aria-label="click here to move previous" className="previous_btn" disabled="" >
           <div className="arrowcss margin">
           

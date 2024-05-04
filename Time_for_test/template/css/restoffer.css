@@ -7,8 +7,10 @@
     display: flex;
     position: absolute;
     margin-top: 12px;
-    left:1200px;
     right: 0px;
+}
+.offer_arrows{
+    left:1200px;
 }
 .previous_btn{
     background-color: transparent;

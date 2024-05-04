@@ -15,7 +15,8 @@ const Cartwithdata=()=>{
      const {
         name,
         locality,
-        cloudinaryImageId
+        cloudinaryImageId,
+      
      }=getresname;
      console.log(name);
      console.log(locality);

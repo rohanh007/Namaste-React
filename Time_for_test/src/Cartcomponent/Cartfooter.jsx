@@ -1,5 +1,8 @@
 import { useSelector } from "react-redux";
 import Cartwithdata from "./Cartwithdata";
+import { CiLocationOn } from "react-icons/ci";
+import { MdPayment } from "react-icons/md";
+import { CiUser } from "react-icons/ci";
 import SignIn from "../Auth/SignIn";
 import { useState } from "react";
 
@@ -14,18 +17,27 @@ const Cartfooter = () => {
         <div className="cart_footer">
             <div className="footer_left_side_container">
                 <div>
-                    <div className="footer_first_small_container">
-                        <div className="fs_msg">
-                            <div className="fs_txt">Oops, something went wrong. Please clear your cart and try again.</div>
-                        </div>
-                        <button className="retry_btn">Retry</button>
-                        <div className="fs_logo_container">
-                            <span className="fs_span fs_logo"></span>
-                        </div>
-                    </div>
+                    { cart.length===0 ?(
+                               <div className="footer_first_small_container">
+                               <div className="fs_msg">
+                                   <div className="fs_txt">Oops, something went wrong. Please clear your cart and try again.</div>
+                               </div>
+                               <button className="retry_btn">Retry</button>
+                               <div className="fs_logo_container">
+                                   <span className="fs_span fs_logo"></span>
+                               </div>
+                              </div>
+                    ):(<div>
+                        </div>)
+                       
+                    }
+                    
                     <div className="footer_first_small_container">
                         <div className="fs_msg">
                             <div className="fs_txt">Account</div>
+                        </div>
+                        <div className="fs_logo_container logo_padding">
+                            <span className="fs_span  "><CiUser/></span>
                         </div>
                         <div className="footer_second_container">
                             <div className="ss_txt">To place your order now, log in to your existing account or sign up.</div>
@@ -47,16 +59,16 @@ const Cartfooter = () => {
                         <div className="fs_msg">
                             <div className="fs_txt">Payment</div>
                         </div>
-                        <div className="fs_logo_container">
-                            <span className="fs_span fs_logo"></span>
+                        <div className="fs_logo_container logo_padding">
+                            <span className="fs_span"><MdPayment/></span>
                         </div>
                     </div>
                     <div className="footer_first_small_container">
                         <div className="fs_msg">
                             <div className="fs_txt">Address</div>
                         </div>
-                        <div className="fs_logo_container">
-                            <span className="fs_span fs_logo"></span>
+                        <div className="fs_logo_container logo_padding">
+                            <span className="fs_span  "><CiLocationOn/></span>
                         </div>
                     </div>
 
@@ -72,6 +84,7 @@ const Cartfooter = () => {
                                 <div className="footer_text-_ep">Good food is always cooking! Go ahead, order some yummy items from the menu.</div>
                             </div>
                         </div>
+    
                     ) : (
                         <div>
                           <Cartwithdata/>

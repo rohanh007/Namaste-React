@@ -2,6 +2,8 @@ import { useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Offercard from './Offercard';
 import Shimmerlist from '../shimmer';
+import { FaArrowLeft } from "react-icons/fa6";
+import { FaArrowRight } from "react-icons/fa";
 import Shimmer from '../ShimmerComponent/Shimmercard';
 import('../../template/css/restoffer.css');
 
@@ -41,14 +43,14 @@ const Restoffer = ({ offers }) => {
                 <button aria-label="click here to move previous" className="previous_btn" disabled="" onClick={handleofferprev}>
                     <div className="arrowcss margin">
                         <svg aria-hidden="true" height="16" width="16" className="arrowsvg">
-                            <use xlinkHref="/core/sprite-2e61ee4e.svg#arrowBack16"></use>
+                            <FaArrowLeft/>
                         </svg>
                     </div>
                 </button>
                 <button aria-label="click here to move next" className="next_btn" onClick={handleoffernext}>
                     <div className="arrowcss">
                         <svg aria-hidden="true" height="16" width="16" className="sc-iGgWBj kDDZoM">
-                            <use xlinkHref="/core/sprite-2e61ee4e.svg#arrowFront16"></use>
+                           <FaArrowRight/>
                         </svg>
                     </div>
                 </button>
