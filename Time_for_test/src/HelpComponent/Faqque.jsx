@@ -9,10 +9,13 @@ const Faqque = (props) => {
     const toggleContent = () => {
         setIsOpen(!isOpen);
     }
+
     const getsid =(id)=>{
         setIssueid(id);
         toggleContent();
     }
+
+   
     useEffect(()=>{
         const issuedata= async()=>{
             try{

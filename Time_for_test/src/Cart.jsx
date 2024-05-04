@@ -2,6 +2,7 @@ import '../template/css/Cart.css';
 import { useSelector } from "react-redux";
 import Cartfooter from './Cartcomponent/Cartfooter';
 import useRestaurantname from '../hooks/useRestaurantname';
+import { Link } from 'react-router-dom';
 const Cart = () => {
    
     const cart=useSelector((store)=>store.cart.items)
@@ -15,7 +16,7 @@ const Cart = () => {
                        <div className="cart_empty_div"></div>
                        <div className='cart_main_header'>Your cart is empty</div>
                        <div className='cart_detail'>You can go to home page to view more restaurants</div>
-                       <div class="cart_button">See restaurants near you</div>
+                       <div class="cart_button"><Link  className="cart_link" to={'/'}>See restaurants near you</Link></div>
                    </div>
                       <div className="warning_popup popupwarning_div">
                       <div className="internal_warning">
