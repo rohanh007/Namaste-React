@@ -1,8 +1,10 @@
 import { useDispatch } from 'react-redux';
 import { useParams } from 'react-router-dom';
 import { categories_img } from '../../utils/constant';
+import { useState } from 'react';
 import useRestaurantname from '../../hooks/useRestaurantname';
 import { addItem } from '../../Slices/Cartslice';
+import Cartbtn from '../Cartbtn/Cartbtn';
 
 import('../../template/css/accordiancategories.css')
 const Accordianwithoutsubcategories=({card})=>{
@@ -20,6 +22,19 @@ const Accordianwithoutsubcategories=({card})=>{
     console.log(resId);
     // const restinfo=useRestaurantname(resId);
     // console.log(restinfo); 
+
+   
+    const [getcount, setcount] = useState(0);
+
+    const handlecountplus = () => {
+
+        setcount(getcount + 1);
+    }
+    const handlecountminus = () => {
+
+        setcount(getcount - 1);
+    }
+ 
     
     const dispatch=useDispatch();
      const handleonclick=()=>{
@@ -66,25 +81,31 @@ const Accordianwithoutsubcategories=({card})=>{
               <div className="item_operation_card">
                 <div style={{ position: 'relative' }}>
                   <div className="item_operation">
-                    <div className="item_cart_op">
-                      <button className="item_btn btn_minus add-button-left-container">
-                        <div className="item_sign">−</div>
-                      </button>
-                      <div className="item_add">
-                        <button className="item_btn add_btn" >
-                          <div className="item_sign">Add</div>
-                        </button>
-                        <button className="item_btn item_ad_btn add-button-center-container" onClick={handleonclick}>
-                          <div className="item_sign">Add</div>
-                        </button>
-                        <button className="item_btn item_one">
-                          <div className="item_sign">1</div>
-                        </button>
-                      </div>
-                      <button className="sc-esYiGF sc-bbSZdi item_btn btn_plus add-button-right-container">
-                        <div className="item_sign">+</div>
-                      </button>
-                    </div>
+                    {  getcount ===0 && (
+                       <div className="item_cart_op" onClick={handlecountplus}>
+                       <div className="item_add">
+                         <button className="item_btn add_btn" >
+                           <div className="item_sign">Add</div>
+                         </button>
+                         <button className="item_btn item_ad_btn add-button-center-container" onClick={handleonclick}>
+                           <div className="item_sign">Add</div>
+                         </button>
+                         <button className="item_btn item_one">
+                           <div className="item_sign">1</div>
+                         </button>
+                       </div>
+                      
+                     </div>
+
+                    ) }
+                    {
+                      getcount>0 && (
+                        <div>
+                        <Cartbtn  additem={handlecountplus} removeitem={handlecountminus} count={getcount} />  
+                          </div>
+                      )
+                    }
+                   
                   </div>
                 </div>
               </div>

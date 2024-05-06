@@ -1,5 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { addItem } from '../../Slices/Cartslice';
+import Cartbtn from '../Cartbtn/Cartbtn';
+import { useState } from 'react';
 
 import('../../template/css/toppickcard.css')
 const Toppickcard=({
@@ -7,6 +9,18 @@ const Toppickcard=({
     title,
     dish
 })=>{
+
+    const [getcount, setcount] = useState(0);
+
+    const handlecountplus = () => {
+
+        setcount(getcount + 1);
+    }
+    const handlecountminus = () => {
+
+        setcount(getcount - 1);
+    }
+
      
     const {
          name,
@@ -32,24 +46,40 @@ const Toppickcard=({
                         <div className="tp_Card_addButton">
                             <div style={{ position: "relative" }}>
                                 <div className="buttons_div">
-                                    <div className="btn_div_minus">
-                                        <button className="btn_minus btncss">
+                                    {
+                                        getcount==0 && (
+                                            <div className="btn_div_minus" onClick={handlecountplus}>
+                                        {/* <button className="btn_minus btncss">
                                             <div className="opsign">−</div>
-                                        </button>
-                                        <div className="btn_add">
+                                        </button> */}
+                                        <div className="btn_add" >
                                             <button className="btncss add_div">
                                                 <div className="add">Add</div>
                                             </button>
                                             <button className="btncss addcss add-button-center-container" onClick={handlecart}>
                                                 <div className="add">Add</div>
                                             </button>
-                                            <button className="btncss countcss">
+                                            {/* <button className="btncss countcss">
                                                 <div className="add">1</div>
-                                            </button>
+                                            </button> */}
                                         </div>
-                                        <button className="btncss plussign add-button-right-container">
+                                        {/* <button className="btncss plussign add-button-right-container">
                                             <div className=" add">+</div>
-                                        </button>
+                                        </button> */}
+                                    </div>
+
+                                        )
+                                    }
+                                    {
+                                        getcount>0 &&(
+                                            <div>
+                                                <Cartbtn  additem={handlecountplus} removeitem={handlecountminus} count={getcount} />  
+                                            </div>
+                                        )
+                                    }
+                                    
+                                    <div>
+                                        {/* <Cartbtn/> */}
                                     </div>
                                     <div className="txt_div">
                                         <div className="txt">Customisable</div>

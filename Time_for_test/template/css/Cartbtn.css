@@ -1,0 +1,84 @@
+.added_cart_container{
+    background: rgb(255, 255, 255);
+    border: 1px solid rgb(226, 226, 231);
+    height: 40px;
+    border-radius: 8px;
+    width: 120px;
+    position: relative;
+    overflow: hidden;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: rgba(40, 44, 63, 0.08) 0px 3px 8px;
+}
+.added_cart_left_container{
+    z-index: 1;
+    padding-left: 16px;
+    padding-right: 12px;
+    transition: all 100ms ease-in-out 0s;
+    transform: translateX(0px);
+}
+.added_cart_comman_css{
+    appearance: none;
+    background: transparent;
+    box-shadow: none;
+    border: none;
+    height: 100%;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-transform: uppercase;
+}
+.added_cart_sign_comman{
+    font-family: Basis_Grotesque_Pro;
+    font-weight: 800;
+    font-size: 18px;
+    line-height: 24px;
+    text-transform: uppercase;
+    color: rgb(27, 166, 114);
+}
+.added_cart_text_add{
+    position: absolute;
+    inset: 0px;
+}
+.added_cart_add_btn{
+    transition: all 100ms ease-in-out 0s;
+    height: 40px;
+    cursor: none;
+    pointer-events: none;
+    transform: translateY(-40px);
+    position: absolute;
+    width: 100%;
+}
+.added_cart_count{
+    transition: none 0s ease 0s;
+    height: 100%;
+    text-align: center;
+    cursor: none;
+    pointer-events: none;
+    position: absolute;
+    width: 100%;
+    transform: translateY(0px);
+}
+.added_cart_second{
+    transition: all 100ms ease-in-out 0s;
+    height: 40px;
+    cursor: none;
+    pointer-events: none;
+    transform: translateY(40px);
+    position: absolute;
+    width: 100%;
+}
+.added_cart_right_container{
+    padding-right: 16px;
+    padding-left: 12px;
+    transition: all 100ms ease-in-out 0s;
+    transform: translateX(0px);
+}
+.add-button-left-container:hover{
+   background-color: rgba(193, 194, 194, 0.684);
+}
+.add-button-right-container:hover{
+    background-color: rgba(193, 194, 194, 0.684);
+ }
