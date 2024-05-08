@@ -2,6 +2,7 @@ import { useDispatch } from 'react-redux';
 import { addItem } from '../../Slices/Cartslice';
 import Cartbtn from '../Cartbtn/Cartbtn';
 import { useState } from 'react';
+import { useParams } from 'react-router-dom';
 
 import('../../template/css/toppickcard.css')
 const Toppickcard=({
@@ -20,7 +21,9 @@ const Toppickcard=({
 
         setcount(getcount - 1);
     }
-
+  
+    const resi=useParams();
+    console.log(resi);
      
     const {
          name,
@@ -28,10 +31,10 @@ const Toppickcard=({
          defaultPrice,  
          description
     }=dish?.info;
-    console.log(dish);
+    // console.log(dish);
     const dispatch=useDispatch();
     const handlecart=()=>{
-        dispatch(addItem(dish.info));
+        dispatch(addItem([dish, resi]));
     }
     return(
         <div className="tp_cardbox">

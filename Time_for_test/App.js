@@ -14,6 +14,7 @@ import { createBrowserRouter ,RouterProvider, Outlet  } from "react-router-dom";
 import Cart from "./src/Cart";
 import { Provider } from "react-redux";
 import appStore from "./utils/appStore";
+import Curatchoice from "./src/Curat_choice/Curatchoice";
 
 
 const PageLayout =() =>(
@@ -58,6 +59,10 @@ const AppLayout =createBrowserRouter([
       {
         path:"/restaurant/:resId",
         element:<Restaurantmenu/>, 
+      },
+      {
+        path:"/collections/:curatid",
+        element:<Curatchoice/>, 
       },
       {
         path:"/cart",

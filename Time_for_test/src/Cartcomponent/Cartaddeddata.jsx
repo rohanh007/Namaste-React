@@ -2,7 +2,8 @@ const Cartaddeddata=(info)=>{
     console.log(info);
     const {
       name ,
-      price
+      price,
+     defaultPrice
     }=info;
     return (
         <div className="cartaddeddata_container">

@@ -10,6 +10,7 @@ import { DATA_API} from "../utils/constant";
 import { addsearchres } from "../Slices/Searchlistslice.js";
 import Curat from "./Bodycomponent/Curat";
 import useCurat from "../hooks/useCurat";
+import Shimmer from "./ShimmerComponent/Shimmercard.jsx";
 import('../template/css/restmenu.css');
 import('../template/css/restoffer.css');
 
@@ -42,7 +43,7 @@ const Body = () => {
         })
     }
  }
-// console.log(ListofRes);
+console.log(curatlist);
   const fetchdata = async () => {
     const data = await fetch(DATA_API);
     //console.log(data);
@@ -78,7 +79,6 @@ const Body = () => {
 
   };
 
-  
    
   
    
@@ -89,7 +89,10 @@ const Body = () => {
    const areaname=ListofRes[0]?.info?.areaName;
    return (ListofRes.length)===0? (
     <Shimmerlist/>
-  ) : (<div className="body-container" >
+  ) : (
+     
+  <div className="body-container" >
+    
     <div className="container">
     <div className="offer_header offer_arrows">
         <button aria-label="click here to move previous" className="previous_btn" disabled="" >
@@ -115,10 +118,14 @@ const Body = () => {
             <div class="tp_empty"></div>
           </div></div>
       </div>
-      <div className="curat-container" ref={containerref}>
-        {curatlist.map(curatdishes => (<Link className="link" key={curatdishes.id} to=""><Curat {...curatdishes} /></Link>))}
-      </div>
-    </div>
+           {
+             curatlist ? (<div className="curat-container" ref={containerref}>
+               {curatlist.map(curatdishes => (<Link className="link" key={curatdishes.id} to={'/collections/' + curatdishes.id}><Curat {...curatdishes} /></Link>))}
+             </div>):(
+              <Shimmer/>
+             )
+      }
+     </div>
     {/* <div className="filter"> */}
 
     {/* <div className="search-container">
