@@ -125,9 +125,9 @@ console.log(curatlist);
                <Link
                  className="link"
                  key={curatdishes.id}
-                 to={{
-                   pathname: '/collections/' + curatdishes.id,
-                   state: {...curatdishes?.action } 
+                 to={'/collections/' + curatdishes.id}
+                 state={{
+                    some: {...curatdishes } 
                  }}
                >
                  <Curat {...curatdishes} />

@@ -1,13 +1,24 @@
 import { useLocation } from "react-router-dom";
+import RestaurantCard from "../RestaurantCard";
 
 
 const Curatchoice=()=>{
-    const location=useLocation();
-    // const actionLink= location.state || {} ;
-    //    console.log(actionLink);
+    let { state}=useLocation();
+    console.log(state);
+     const  {
+       link,
+       text
+     }=state.some ;
+    
+
     return (
         <div>
-            Hey guys
+            <div>
+                <h1>{text}</h1>
+            </div>
+            <div>
+                <RestaurantCard/>
+            </div>
         </div>
     )
 }
