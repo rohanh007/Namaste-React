@@ -9,6 +9,7 @@ import { Link } from "react-router-dom";
 import { DATA_API} from "../utils/constant";
 import { addsearchres } from "../Slices/Searchlistslice.js";
 import Curat from "./Bodycomponent/Curat";
+import curatlist from "../Data/Curatlist.js";
 import useCurat from "../hooks/useCurat";
 import Shimmer from "./ShimmerComponent/Shimmercard.jsx";
 import('../template/css/restmenu.css');
@@ -18,7 +19,7 @@ const Body = () => {
   const [ListofRes, setListofRes] = useState([]);
   const [filterListofRes, setfilterListofRes] = useState([]);
   const [searchtext ,setsearchtext]= useState('');
-  const curatlist=useCurat(DATA_API);
+  // const curatlist=useCurat(DATA_API);
   const containerref=useRef(null);
   console.log(curatlist);
   
@@ -116,16 +117,26 @@ console.log(curatlist);
           <div class="tp_block">
             <h2 class="title">What's on your mind?</h2>
             <div class="tp_empty"></div>
-          </div></div>
-      </div>
-           {
-             curatlist ? (<div className="curat-container" ref={containerref}>
-               {curatlist.map(curatdishes => (<Link className="link" key={curatdishes.id} to={'/collections/' + curatdishes.id}><Curat {...curatdishes} /></Link>))}
-             </div>):(
-              <Shimmer/>
-             )
-      }
-     </div>
+               </div></div>
+           </div>
+
+           <div className="curat-container" ref={containerref}>
+             {curatlist.map(curatdishes => (
+               <Link
+                 className="link"
+                 key={curatdishes.id}
+                 to={{
+                   pathname: '/collections/' + curatdishes.id,
+                   state: {...curatdishes?.action } 
+                 }}
+               >
+                 <Curat {...curatdishes} />
+               </Link>
+             ))}
+
+           </div>
+
+         </div>
     {/* <div className="filter"> */}
 
     {/* <div className="search-container">
