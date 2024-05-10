@@ -127,7 +127,7 @@ console.log(curatlist);
                  key={curatdishes.id}
                  to={'/collections/' + curatdishes.id}
                  state={{
-                    some: {...curatdishes } 
+                    some: {...curatdishes} 
                  }}
                >
                  <Curat {...curatdishes} />
