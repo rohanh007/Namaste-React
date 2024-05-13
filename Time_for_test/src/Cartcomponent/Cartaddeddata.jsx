@@ -6,22 +6,39 @@ const Cartaddeddata=(info)=>{
      defaultPrice
     }=info;
     return (
-        <div className="cartaddeddata_container">
-            <div className="cartaddeddata_product_name_container">
-                <i className="styles_icon__m6Ujp _2MJB6 icon-Veg styles_iconVeg__shLxJ" role="presentation" aria-hidden="true" style={{ lineHeight: '1.2' }}></i>
-                <div className="cartaddeddata_name_product">{name}<button className="customize_btn"></button></div>
-            </div>
-            <div className="add_price_count-container">
-                <div className="add_mutiple_count_container">
-                    <div className="mutiple_addpro mutiple_addpro_two">
-                        <div className="multiple_addpro_add_one multiple_addpro_add_two multiple_addpro_add_three ">ADD</div>
-                        <div className="multiple_addpro_add_three M_addpro_plus_I M_addpro_plus_II">+</div>
-                        {/* <div className="addpro_plus_sign">+</div>
-                        <div className="addpro_empty"></div>
-                        <div className="addpro_count">1</div> */}
+        <div>
+            <div className='zeroheightdiv'></div>
+            <div className='datacart_row_'>
+                <div className='cartdatacontainer'>
+                    <div className='offercartdata_row'>
+                        {/* <i className="styles_icon__m6Ujp _2MJB6 icon-Veg styles_iconVeg__shLxJ" role="presentation" aria-hidden="true" style={{ lineHeight: '1.2' }}></i> */}
+                        <div className='datacart_txt_name'>
+                            {name}
+                        </div>
                     </div>
-                    <div className="price_container_add"><span className="add_pro_price">{price ? (price/100):(defaultPrice/100)}</span></div>
+                    <div className='offer_data_cart_container'>
+                        <div className='offer_data_cart_row'>
+                            <div className='cartadded_count'>
+                                {/* <div className='cartadded_count_add'>
+                                                                    ADD
+                                                                </div> */}
+                                <div className='cartadded_count_plus'>
+                                    +
+                                </div>
+                                <div className='cartadded_count_minus'>
+                                    -
+                                </div>
+                                <div className='cartadded_count_data_minus'>
+                                    1
+                                </div>
+                            </div>
+                            <div className='cartadded_data_price'>
+                                <span>{price ? (price / 100) : (defaultPrice / 100)}</span>
+                            </div>
+                        </div>
+                    </div>
                 </div>
+
             </div>
         </div>
 
