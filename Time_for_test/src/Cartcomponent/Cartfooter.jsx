@@ -13,6 +13,7 @@ const Cartfooter = () => {
      const toggletoopen=()=>{
            setisopen(!isopen);
      }
+   
     return (
         <div className="cart_footer">
             <div className="footer_left_side_container">

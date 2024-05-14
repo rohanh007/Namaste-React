@@ -6,7 +6,9 @@ import Cartaddeddata from './Cartaddeddata';
 const Cartwithdata = () => {
     const cartdata = useSelector((store) => (store.cart.items))
     console.log(cartdata);
-
+    const count=sessionStorage.getItem('count');
+    console.log(JSON.parse(count));
+    console.log(count);
     const {
         resId
     } = cartdata[0][1];

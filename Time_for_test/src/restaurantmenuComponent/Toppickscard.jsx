@@ -1,7 +1,7 @@
 import { useDispatch } from 'react-redux';
 import { addItem } from '../../Slices/Cartslice';
 import Cartbtn from '../Cartbtn/Cartbtn';
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useParams } from 'react-router-dom';
 
 import('../../template/css/toppickcard.css')
@@ -10,9 +10,14 @@ const Toppickcard=({
     title,
     dish
 })=>{
+    const resi=useParams();
+    console.log(resi);
+    const [getcount, setcount] = useState(parseInt(sessionStorage.getItem('count')) || 0);
 
-    const [getcount, setcount] = useState(0);
-
+    // if(!getcount)
+    //     {
+    //         setcount(0);
+    //     }
     const handlecountplus = () => {
 
         setcount(getcount + 1);
@@ -21,9 +26,13 @@ const Toppickcard=({
 
         setcount(getcount - 1);
     }
-  
-    const resi=useParams();
-    console.log(resi);
+
+    useEffect(() => {
+        const cartdata = JSON.stringify([{ count: getcount }, { dish }, { resi }]);
+        sessionStorage.setItem('cartData', cartdata);
+    }, [getcount, dish, resi]);
+  console.log(getcount);
+   
      
     const {
          name,
@@ -34,7 +43,7 @@ const Toppickcard=({
     // console.log(dish);
     const dispatch=useDispatch();
     const handlecart=()=>{
-        dispatch(addItem([dish, resi , getcount]))
+        dispatch(addItem([dish, resi,getcount]))
     }
     return(
         <div className="tp_cardbox">
@@ -50,33 +59,31 @@ const Toppickcard=({
                             <div style={{ position: "relative" }}>
                                 <div className="buttons_div">
                                     {
-                                        getcount==0 && (
+                                        getcount===0 &&(
                                             <div className="btn_div_minus" onClick={handlecountplus}>
-                                        {/* <button className="btn_minus btncss">
-                                            <div className="opsign">−</div>
-                                        </button> */}
-                                        <div className="btn_add" >
-                                            <button className="btncss add_div">
-                                                <div className="add">Add</div>
-                                            </button>
-                                            <button className="btncss addcss add-button-center-container" onClick={handlecart}>
-                                                <div className="add">Add</div>
-                                            </button>
-                                            {/* <button className="btncss countcss">
+                                               
+                                                <div className="btn_add" >
+                                                    <button className="btncss add_div">
+                                                        <div className="add">Add</div>
+                                                    </button>
+                                                    <button className="btncss addcss add-button-center-container" onClick={handlecart}>
+                                                        <div className="add">Add</div>
+                                                    </button>
+                                                    {/* <button className="btncss countcss">
                                                 <div className="add">1</div>
                                             </button> */}
-                                        </div>
-                                        {/* <button className="btncss plussign add-button-right-container">
+                                                </div>
+                                                {/* <button className="btncss plussign add-button-right-container">
                                             <div className=" add">+</div>
                                         </button> */}
-                                    </div>
+                                            </div>
 
                                         )
                                     }
                                     {
                                         getcount>0 &&(
                                             <div>
-                                                <Cartbtn  additem={handlecountplus} removeitem={handlecountminus} count={getcount} />  
+                                                <Cartbtn  additem={handlecountplus} removeitem={handlecountminus} count={getcount} countsend={handlecart} />  
                                             </div>
                                         )
                                     }
