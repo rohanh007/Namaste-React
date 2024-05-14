@@ -34,7 +34,7 @@ const Toppickcard=({
     // console.log(dish);
     const dispatch=useDispatch();
     const handlecart=()=>{
-        dispatch(addItem([dish, resi]));
+        dispatch(addItem([dish, resi , getcount]))
     }
     return(
         <div className="tp_cardbox">

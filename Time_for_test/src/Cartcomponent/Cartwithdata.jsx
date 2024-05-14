@@ -29,13 +29,12 @@ const Cartwithdata = () => {
                     <span className="cartwithdata_img_head">
                         <img
                             className=""
-                            imageurl="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_100,h_100,c_fill/RX_THUMBNAIL/IMAGES/VENDOR/2024/4/17/0a394524-ec41-4e42-9b44-a3e4dff3b623_89140.JPG"
+                            imageurl={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_100,h_100,c_fill/${cloudinaryImageId}`} 
                             height="50"
                             width="50"
                             imageid=""
                             alt="img renderer"
-                            src="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_100,h_100,c_fill/RX_THUMBNAIL/IMAGES/VENDOR/2024/4/17/0a394524-ec41-4e42-9b44-a3e4dff3b623_89140.JPG"
-                        />
+                            src={`https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_100,h_100,c_fill/${cloudinaryImageId}`}                        />
                     </span>
                     <span className="cartwithdata_txt_head">
                         <div className="cartwithdata_txt_name">{name}</div>

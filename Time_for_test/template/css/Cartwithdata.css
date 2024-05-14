@@ -1,3 +1,6 @@
+html{
+    overflow-x: hidden;
+}
 .cartwithdata_container{
    width: 366px ;
 }
@@ -166,6 +169,7 @@
     width: 33.3333333333%;
     display: inline-block;
     opacity: 1;
+    margin-top: -4px;
     transform: translateZ(0);
     cursor: pointer;
     font-weight: 600;
@@ -193,8 +197,8 @@
     border-bottom: 2px solid #282c3f;
 }
 .cartadded_bill_head{
-    font-weight: 500;
-    font-size: 13px;
+    font-weight: 700;
+    font-size: 14px;
     margin-bottom: 10px;
     color: #282c3f;
 }
