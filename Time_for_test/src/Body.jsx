@@ -5,13 +5,14 @@ import { useDispatch } from "react-redux";
 import { useState ,useEffect, useRef } from "react";
 import { FaArrowRightLong } from "react-icons/fa6";
 import { FaArrowLeftLong } from "react-icons/fa6";
-import { Link } from "react-router-dom";
-import { DATA_API} from "../utils/constant";
+import { Link, useLocation } from "react-router-dom";
+import { DATA_API, getDataApiUrl} from "../utils/constant";
 import { addsearchres } from "../Slices/Searchlistslice.js";
 import Curat from "./Bodycomponent/Curat";
 import curatlist from "../Data/Curatlist.js";
 import useCurat from "../hooks/useCurat";
 import Shimmer from "./ShimmerComponent/Shimmercard.jsx";
+import { getLocationDataFromSessionStorage } from "./sessionStorage.js";
 import('../template/css/restmenu.css');
 import('../template/css/restoffer.css');
 
@@ -22,7 +23,8 @@ const Body = () => {
   // const curatlist=useCurat(DATA_API);
   const containerref=useRef(null);
   console.log(curatlist);
-  
+  const DATA_A=getDataApiUrl();
+  console.log(DATA_A);
    useEffect(()=>{
       fetchdata();
    }, []);

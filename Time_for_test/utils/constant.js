@@ -1,5 +1,14 @@
 import { useLocation } from "react-router-dom";
+import { getLocationDataFromSessionStorage } from "../src/sessionStorage";
 
+
+export const getDataApiUrl = () => {
+  const sessionData = getLocationDataFromSessionStorage();
+  console.log(sessionData);
+  const latitude = sessionData && sessionData.latitude ? sessionData.latitude : 18.61610;
+  const longitude = sessionData && sessionData.longitude ? sessionData.longitude : 73.72860;
+  return `https://www.swiggy.com/dapi/restaurants/list/v5?lat=${latitude}&lng=${longitude}&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING`;
+};
 
 
 export const CDN_URL =
@@ -11,7 +20,7 @@ export const LOGO_URL =
 export const MENU_API =
   'https://www.swiggy.com/mapi/menu/pl?page-type=REGULAR_MENU&complete-menu=true&lat=18.5904779&lng=73.7271909&restaurantId=';
 
-export const DATA_API='https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.61610&lng=73.72860&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING';
+ export const DATA_API='https://www.swiggy.com/dapi/restaurants/list/v5?lat=18.61610&lng=73.72860&is-seo-homepage-enabled=true&page_type=DESKTOP_WEB_LISTING';
 
 export const Curatimage="https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_288,h_360/";
 

@@ -1,29 +1,39 @@
 import { useEffect, useState } from 'react';
 import { IoMdClose } from "react-icons/io";
 import { Link } from 'react-router-dom';
-
+import { getDataApiUrl } from '../../utils/constant';
+import { getLocationDataFromSessionStorage, setLocationDataToSessionStorage } from '../sessionStorage';
 import('../../template/css/location.css');
 
 const LocationPopup = ({ islocopen, islocclose }) => {
     const [SearchLocation, setSearchLocation] = useState('');
     const [positionData, setPositionData] = useState(null);
 
+
+
     // Function to handle successful retrieval of position
     const gotPosition = (position) => {
         const latitude = position.coords.latitude;
         const longitude = position.coords.longitude;
-        
         // Make a request to reverse geocode the coordinates to get the area name
         fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${latitude}&lon=${longitude}`)
             .then(response => response.json())
             .then(data => {
-                const placeName = data.display_name;
-                setPositionData({ latitude, longitude, placeName });
+                if (data && data.lat && data.lon) { // Check if data is not null and contains latitude and longitude
+                    const placeName = data.display_name;
+                    const newPositionData = { latitude: data.lat, longitude: data.lon, placeName };
+                    setPositionData(newPositionData);
+                    setLocationDataToSessionStorage(newPositionData); // Update session storage
+                } else {
+                    console.error("Invalid data format received from reverse geocoding API");
+                }
             })
             .catch(error => {
                 console.error("Error:", error);
             });
     };
+    
+    
 
     // Function to handle failure in retrieving position
     const notGotPosition = () => {
