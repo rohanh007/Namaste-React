@@ -28,9 +28,9 @@ const Toppickcard=({
     }
 
     useEffect(() => {
-        const cartdata = JSON.stringify([{ count: getcount }, { dish }, { resi }]);
-        sessionStorage.setItem('cartData', cartdata);
-    }, [getcount, dish, resi]);
+       
+        sessionStorage.setItem('count', getcount);
+    }, [getcount]);
   console.log(getcount);
    
      
@@ -38,12 +38,13 @@ const Toppickcard=({
          name,
          price,
          defaultPrice,  
-         description
+         description,
+         id
     }=dish?.info;
-    // console.log(dish);
+    console.log(dish);
     const dispatch=useDispatch();
     const handlecart=()=>{
-        dispatch(addItem([dish, resi,getcount]))
+        dispatch(addItem([dish, resi,id]))
     }
     return(
         <div className="tp_cardbox">

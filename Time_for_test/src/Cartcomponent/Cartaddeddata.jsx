@@ -1,10 +1,32 @@
+import { useEffect, useState } from "react";
+
 const Cartaddeddata=(info)=>{
+    const [getcount, setcount]=useState(sessionStorage.getItem('count') || 0);
+    const [getid ,setid]=useState(sessionStorage.getItem('id') || 0);
     console.log(info);
     const {
       name ,
       price,
-     defaultPrice
+     defaultPrice,
+     id 
     }=info;
+     
+    const handlesetid=(id)=>{
+        setid(id);
+    }
+    const handlecountminus=()=>{
+        setcount(getcount-1)
+    } 
+    const handlecountplus=()=>{
+        setcount(getcount+1)
+    }
+    
+     useEffect(()=>{
+       sessionStorage.setItem('count',getcount);
+       sessionStorage.setItem('cartitemid', getid)
+     },[getcount,getid])
+    
+     console.log(getid);  
     return (
         <div>
             <div className='zeroheightdiv'></div>
@@ -18,18 +40,18 @@ const Cartaddeddata=(info)=>{
                     </div>
                     <div className='offer_data_cart_container'>
                         <div className='offer_data_cart_row'>
-                            <div className='cartadded_count'>
+                            <div className='cartadded_count' >
                                 {/* <div className='cartadded_count_add'>
                                                                     ADD
                                                                 </div> */}
-                                <div className='cartadded_count_plus'>
+                                <div className='cartadded_count_plus' onClick={()=>{handlesetid(id) ,handlecountplus()}}>
                                     +
                                 </div>
-                                <div className='cartadded_count_minus'>
+                                <div className='cartadded_count_minus' onClick={()=>{handlesetid(id) , handlecountminus()} }>
                                     -
                                 </div>
-                                <div className='cartadded_count_data_minus'>
-                                    1
+                                <div className='cartadded_count_data_minus' >
+                                    {getcount}
                                 </div>
                             </div>
                             <div className='cartadded_data_price'>

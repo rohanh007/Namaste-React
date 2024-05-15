@@ -1,10 +1,10 @@
 import "../../template/css/Cartbtn.css";
-const Cartbtn=({additem , removeitem, count ,countsend})=>{
+const Cartbtn=({additem , removeitem, count })=>{
    console.log(count);
 
     return (
         <div className="added_cart_container">
-        <button className=" added_cart_comman_css added_cart_left_container add-button-left-container" onClick={()=>{removeitem,countsend}}>
+        <button className=" added_cart_comman_css added_cart_left_container add-button-left-container" onClick={removeitem}>
           <div className="added_cart_sign_comman">−</div>
         </button>
         <div className=" added_cart_text_add">
@@ -18,7 +18,7 @@ const Cartbtn=({additem , removeitem, count ,countsend})=>{
             <div className="added_cart_sign_comman">2</div>
           </button> */}
         </div>
-        <button className="added_cart_comman_css added_cart_right_container add-button-right-container" onClick={()=>{additem,countsend}}>
+        <button className="added_cart_comman_css added_cart_right_container add-button-right-container" onClick={additem}>
           <div className="added_cart_sign_comman">+</div>
         </button>
       </div>
