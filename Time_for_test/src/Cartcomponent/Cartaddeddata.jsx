@@ -1,9 +1,11 @@
 import { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 
 const Cartaddeddata=(info)=>{
     const [getcount, setcount]=useState(sessionStorage.getItem('count') || 0);
     const [getid ,setid]=useState(sessionStorage.getItem('id') || 0);
-    console.log(info);
+    const dispatch=useDispatch();
+        console.log(info);
     const {
       name ,
       price,
@@ -11,6 +13,17 @@ const Cartaddeddata=(info)=>{
      id 
     }=info;
      
+    useEffect(()=>{
+        if (getcount === 0) {
+            const itemIdToRemove =getid; 
+            console.log(getid);
+            dispatch({
+                type: 'removeItem',
+                payload: { itemId: itemIdToRemove }
+            });
+        }
+},[getcount,getid])
+
     const handlesetid=(id)=>{
         setid(id);
     }

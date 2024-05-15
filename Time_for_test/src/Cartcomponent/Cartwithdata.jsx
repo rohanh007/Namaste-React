@@ -1,15 +1,15 @@
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import '../../template/css/Cartwithdata.css';
 import useRestaurantname from '../../hooks/useRestaurantname';
 import { Link } from 'react-router-dom';
 import Cartaddeddata from './Cartaddeddata';
+import { useEffect } from 'react';
 const Cartwithdata = () => {
     const cartdata = useSelector((store) => (store.cart.items))
     console.log(cartdata);
-    const count=sessionStorage.getItem('count');
-    
-    
-    console.log(count);
+  
+
+    // console.log(count);
     const {
         resId
     } = cartdata[0][1];

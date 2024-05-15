@@ -12,9 +12,12 @@ const Createslice=createSlice({
         addsearchres:(state ,actions)=>{
             state.items.push(actions.payload);
         },
-        removeitem:(state,action)=>{
-              state.items.pop();
+        removeItem: (state, action) => {
+            const itemIdToRemove = action.payload.itemId;
+            console.log(state.items);
+            state.items = state.items.filter(item => item.itemId !== itemIdToRemove);
         }
+        
     }
 
 })
