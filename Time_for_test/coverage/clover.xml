@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1710308048552" clover="3.2.0">
-  <project timestamp="1710308048552" name="All files">
+<coverage generated="1718903165406" clover="3.2.0">
+  <project timestamp="1718903165406" name="All files">
     <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1" elements="3" coveredelements="3" complexity="0" loc="2" ncloc="2" packages="1" files="1" classes="1"/>
-    <file name="sum.js" path="C:\Users\Admin\Desktop\Swiggy-clone-branch\Namaste-React\Time_for_test\src\sum.js">
+    <file name="sum.js" path="C:\Users\HP\OneDrive\Desktop\Dekstop_files\Namaste_React\Namaste-React\Time_for_test\src\sum.js">
       <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
       <line num="1" count="1" type="stmt"/>
       <line num="2" count="1" type="stmt"/>
