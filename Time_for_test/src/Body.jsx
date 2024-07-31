@@ -49,7 +49,7 @@ const Body = () => {
 console.log(curatlist);
   const fetchdata = async () => {
     const data = await fetch(DATA_API);
-    //console.log(data);
+    console.log(data);
     // if (!data.ok) {
     //   console.error(`Error: ${data.status} - ${data.statusText}`);
     //   const textResponse = await data.text();

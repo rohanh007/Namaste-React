@@ -10,7 +10,7 @@ const config = {
 
   // Stop running tests after `n` failures
   // bail: 0,
-
+ 
   // The directory where Jest should store its cached dependency information
   // cacheDirectory: "C:\\Users\\Admin\\AppData\\Local\\Temp\\jest",
 
@@ -89,7 +89,9 @@ const config = {
   // ],
 
   // A map from regular expressions to module names or to arrays of module names that allow to stub out resources with a single module
-  // moduleNameMapper: {},
+  moduleNameMapper: { "\\.(css|less)$": "<rootDir>/__mocks__/styleMock.js"},
+
+  resolver: undefined,
 
   // An array of regexp pattern strings, matched against all module paths before considered 'visible' to the module loader
   // modulePathIgnorePatterns: [],
@@ -125,9 +127,9 @@ const config = {
   // rootDir: undefined,
 
   // A list of paths to directories that Jest should use to search for files in
-  // roots: [
-  //   "<rootDir>"
-  // ],
+  roots: [
+    "<rootDir>"
+  ],
 
   // Allows you to use a custom runner instead of Jest's default test runner
   // runner: "jest-runner",
